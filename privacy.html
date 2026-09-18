@@ -1,144 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crossword Lane — Gizlilik Politikası / Privacy Policy</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gizlilik Politikası — Crossword Lane</title>
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #6b6b6b;
-    --accent: #7c3aed;
-    --border: #e5e5e5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14141a;
-      --fg: #f2f2f2;
-      --muted: #a0a0a8;
-      --accent: #b794f6;
-      --border: #2c2c34;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 20px 96px;
-  }
-  h1 {
-    font-size: 1.6rem;
-    margin-bottom: 4px;
-  }
-  .updated {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 32px;
-  }
-  h2 {
-    font-size: 1.15rem;
-    margin-top: 40px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-  }
-  p { margin: 12px 0; }
-  a { color: var(--accent); }
-  .lang-switch {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .lang-switch a {
-    text-decoration: none;
-    padding: 6px 14px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    color: var(--fg);
-  }
-  .lang-switch a:hover { border-color: var(--accent); }
-  section { display: none; }
-  section.active { display: block; }
-  footer {
-    margin-top: 48px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5c66;--line:#e4e4ea;--accent:#4a4ae0}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-text-size-adjust:100%}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+header{border-bottom:1px solid var(--line);padding-bottom:1.25rem;margin-bottom:2rem}
+h1{font-size:1.6rem;margin:0 0 1rem;letter-spacing:-.01em}
+h2{font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+ margin:2.25rem 0 .6rem;font-weight:700}
+p{margin:0 0 1rem}
+ul{margin:0 0 1rem;padding-left:1.2rem}
+li{margin:0 0 .4rem}
+.meta{color:var(--muted);font-size:.88rem}
+a{color:var(--accent);overflow-wrap:anywhere}
+nav{display:flex;gap:.5rem}
+nav button{font:inherit;font-size:.85rem;padding:.35rem .9rem;border-radius:999px;cursor:pointer;
+ border:1px solid var(--line);background:transparent;color:var(--muted)}
+nav button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+[hidden]{display:none}
+footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
+ color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="lang-switch">
-    <a href="#tr" onclick="showLang('tr')">Türkçe</a>
-    <a href="#en" onclick="showLang('en')">English</a>
-  </div>
-
-  <section id="tr" class="active">
-    <h1>Gizlilik Politikası</h1>
-    <p class="updated">Son güncelleme: 18 Ağustos 2026</p>
-
-    <p>Crossword Lane, gizliliğinize saygı duyar ve yalnızca oyunun çalışması, geliştirilmesi, güvenliğinin sağlanması, reklam gösterimi ve abonelik yönetimi için gerekli verileri işler. Uygulama 13 yaş ve üzeri kullanıcılar için tasarlanmıştır.</p>
-
-    <p>Uygulamada kişisel hesap oluşturulmaz ve e-posta adresi toplanmaz. Oyun ilerlemeniz, istatistikleriniz ve tercihleriniz yalnızca cihazınızda yerel olarak saklanır. Abonelik yönetimi için anonim bir kullanıcı kimliği oluşturulur; bulmaca içerikleri (görseller ve seviye verileri) Firebase Storage üzerinden herkese açık şekilde sunulur.</p>
-
-    <p>Uygulamanın performansını anlamak için, izniniz dahilinde, Firebase Analytics kullanılabilir. Bu kapsamda cihaz tipi, işletim sistemi, uygulama sürümü ve genel kullanım istatistikleri işlenebilir.</p>
-
-    <p>Uygulamada Google AdMob aracılığıyla banner ve geçiş reklamları gösterilebilir. Bu hizmet, reklam sunumu ve ölçümü için cihaz reklam kimliğini kullanabilir. iOS'ta IDFA, Android'de AAID gibi tanımlayıcıların kullanımı cihazınızın gizlilik ve reklam ayarlarına bağlıdır.</p>
-
-    <p>Premium+ veya Reklamsız abonelikler RevenueCat, App Store ve Google Play üzerinden yönetilir. Ödeme bilgileri uygulama tarafından doğrudan toplanmaz; abonelik durumu ve satın alma doğrulaması için gerekli bilgiler ilgili servisler aracılığıyla işlenir.</p>
-
-    <p>Veriler, uygulamanın çalışması için makul süre boyunca saklanır ve yetkisiz erişime karşı uygun teknik önlemlerle korunur. Bu uygulama hakkında sorularınız için App Store veya Google Play üzerinden uygulama sayfasını ziyaret edin.</p>
-
-    <h2>İlgili sayfa</h2>
-    <p><a href="terms.html">Kullanım Şartları</a></p>
-  </section>
-
-  <section id="en">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: August 18, 2026</p>
-
-    <p>Crossword Lane respects your privacy and processes only the data needed to run, improve, secure, advertise, and manage subscriptions for the app. The app is designed for users aged 13 and older.</p>
-
-    <p>The app does not require a personal account, and no email address is collected. Your game progress, statistics, and preferences are stored locally on your device only. An anonymous user ID is generated for subscription management; puzzle content (images and level data) is delivered publicly through Firebase Storage.</p>
-
-    <p>Firebase Analytics may be used, with your consent, to understand app performance. This may include device type, operating system, app version, and general usage statistics.</p>
-
-    <p>The app may show banner and interstitial ads through Google AdMob. This service may use your device advertising identifier for ad delivery and measurement. Use of identifiers such as IDFA on iOS or AAID on Android depends on your device privacy and advertising settings.</p>
-
-    <p>Premium+ or Ad-Free subscriptions are managed through RevenueCat, the App Store, and Google Play. Payment information is not collected directly by the app; subscription status and purchase validation data are processed through the relevant services.</p>
-
-    <p>Data is kept for a reasonable period needed for the app to function and is protected with appropriate technical measures against unauthorized access. For questions about this app, please visit the app page on the App Store or Google Play.</p>
-
-    <h2>Related page</h2>
-    <p><a href="terms.html">Terms of Use</a></p>
-  </section>
-
-  <footer>Crossword Lane</footer>
+<header>
+  <h1 id="pagetitle">Gizlilik Politikası</h1>
+  <nav>
+    <button id="btn-tr" aria-pressed="true" onclick="pick('tr')">Türkçe</button>
+    <button id="btn-en" aria-pressed="false" onclick="pick('en')">English</button>
+  </nav>
+</header>
+<main>
+<section id="tr">
+<p class="meta">Son güncelleme: 22 Ağustos 2026 · Sürüm 1.0</p>
+<h2>1. VERİ SORUMLUSU</h2>
+<p>Bu uygulamanın veri sorumlusu Egehan Acar&#x27;dır (Türkiye). Bu metinde açıklanan işlemelere ilişkin her türlü soru, talep ve başvuru için: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+<h2>2. TOPLAMADIĞIMIZ VERİLER</h2>
+<p>Crossword Lane&#x27;de hesap oluşturulmaz. Adınız, e-posta adresiniz, telefon numaranız veya konumunuz toplanmaz. Oyun ilerlemeniz, istatistikleriniz ve tercihleriniz yalnızca cihazınızda saklanır; bu kayıtlara erişimimiz yoktur.</p>
+<h2>3. İŞLENEN VERİLER, AMAÇLARI VE HUKUKİ SEBEPLERİ</h2>
+<p>a) Bulmaca içeriğinin indirilmesi. Bulmacalar ve ipucu görselleri Google Firebase Storage üzerinden cihazınıza indirilir. Bu sırada cihazınızın IP adresi ve genel cihaz bilgileri Google&#x27;ın sunucularına ulaşır; internetten dosya indiren her uygulamada bu teknik olarak kaçınılmazdır. İsteğin uygulamanın gerçek bir kopyasından geldiğini doğrulamak için Firebase App Check kullanılır. Hukuki sebep: sözleşmenin ifası ve meşru menfaat (KVKK m.5/2-c ve m.5/2-f).</p>
+<p>b) Abonelik ve satın alma. Premium+ ve Reklamsız abonelikleri RevenueCat, Inc. aracılığıyla App Store üzerinden yönetilir. Ödeme bilgileriniz uygulamaya hiçbir şekilde ulaşmaz; RevenueCat abonelik durumunuzu kimliğinizle değil, cihazınıza bağlı anonim bir tanımlayıcı ile takip eder. Hukuki sebep: sözleşmenin ifası (KVKK m.5/2-c).</p>
+<p>c) Ölçümleme ve hata ayıklama. Firebase Analytics ile hangi ekranların kullanıldığı, cihaz tipi, işletim sistemi sürümü ve uygulama sürümü gibi genel kullanım istatistikleri işlenir. Bu veriler kimliğinizle değil, cihazınızdaki uygulama kopyasına atanan bir &quot;uygulama örneği kimliği&quot; (app instance ID) ile ilişkilendirilir. Firebase Crashlytics ile çökme ve tanılama raporları toplanır; bu raporlar hatanın oluştuğu cihaz modeli, işletim sistemi sürümü ve teknik yığın bilgisini içerir. Hukuki sebep: meşru menfaat (KVKK m.5/2-f) — uygulamanın çalışır durumda kalması ve iyileştirilebilmesi.</p>
+<p>d) Reklamlar ve rıza yönetimi. Google AdMob aracılığıyla banner, geçiş ve ödüllü reklamlar gösterilir. Reklamların kişiselleştirilmesi ve ölçülmesi için cihazınızın reklam kimliği (iOS&#x27;ta IDFA) yalnızca izniniz dahilinde kullanılır. İzniniz iki ayrı yerden alınır: Google&#x27;ın UMP (User Messaging Platform) SDK&#x27;sı üzerinden gösterilen rıza ekranı ve iOS&#x27;ta Apple&#x27;ın App Tracking Transparency sorusu. İzin vermezseniz reklamlar gösterilmeye devam eder, ancak kişiselleştirilmez. Hukuki sebep: açık rıza (KVKK m.5/1).</p>
+<p>Rızanızı dilediğiniz zaman geri alabilirsiniz: iOS Ayarlar → Gizlilik ve Güvenlik → İzleme bölümünden izleme iznini kapatabilirsiniz. Uygulamanın Ayarlar ekranında reklam gizlilik seçenekleri sunulduğunda, reklam rızanızı oradan da güncelleyebilirsiniz.</p>
+<h2>4. YURT DIŞINA AKTARIM</h2>
+<p>Yukarıda sayılan hizmetlerin tamamı yurt dışı merkezli şirketlerce sağlanmaktadır; bu hizmetler kullanıldığı ölçüde verileriniz yurt dışında işlenmektedir:</p>
+<ul><li>Google LLC (Amerika Birleşik Devletleri) ve Google Ireland Limited — Firebase Storage, App Check, Analytics, Crashlytics, AdMob ve UMP</li><li>RevenueCat, Inc. (Amerika Birleşik Devletleri) — abonelik durumunun yönetimi</li><li>Apple Inc. (Amerika Birleşik Devletleri) — satın alma, faturalandırma ve abonelik işlemleri</li></ul>
+<p>Bu şirketlerin kendi işlemeleri bakımından kendi gizlilik politikaları geçerlidir.</p>
+<h2>5. SAKLAMA</h2>
+<p>Cihazınızda tutulan veriler uygulamayı silene kadar kalır; uygulamayı kaldırmak bunları da kaldırır. Ayarlar → İlerlemeyi sıfırla seçeneğiyle de temizleyebilirsiniz. Yukarıdaki hizmetlerin kendi sunucularında tuttuğu veriler, ilgili sağlayıcının kendi saklama süreleri boyunca saklanır.</p>
+<h2>6. HAKLARINIZ</h2>
+<p>KVKK m.11 uyarınca; kişisel verilerinizin işlenip işlenmediğini öğrenme, işlenmişse buna ilişkin bilgi talep etme, işlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme, yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme, eksik veya yanlış işlenmiş olması hâlinde düzeltilmesini isteme, silinmesini veya yok edilmesini isteme, bu işlemlerin aktarım yapılan üçüncü kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz edilmesi suretiyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme ve kanuna aykırı işleme sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme haklarına sahipsiniz.</p>
+<p>Avrupa Birliği&#x27;nde bulunuyorsanız, GDPR kapsamında verilerinize erişme, düzeltilmesini, silinmesini veya işlenmesinin kısıtlanmasını isteme, veri taşınabilirliği ve işlemeye itiraz etme haklarına da sahipsiniz; ayrıca bulunduğunuz ülkenin veri koruma otoritesine şikâyette bulunabilirsiniz.</p>
+<p>Başvurularınızı <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a> adresine iletebilirsiniz. Talepleriniz en geç otuz gün içinde sonuçlandırılır.</p>
+<h2>7. ÇOCUKLAR</h2>
+<p>Uygulama 13 yaş ve üzeri kullanıcılar için tasarlanmıştır. Bilerek 13 yaşından küçük kullanıcılardan veri toplanmaz.</p>
+<h2>8. DEĞİŞİKLİKLER</h2>
+<p>Bu metinde yapılan önemli değişiklikler uygulama içinde duyurulur ve yukarıdaki &quot;Son güncelleme&quot; tarihi güncellenir.</p>
+</section>
+<section id="en" hidden>
+<p class="meta">Last updated: 22 August 2026 · Version 1.0</p>
+<h2>1. WHO IS RESPONSIBLE</h2>
+<p>The data controller for this app is Egehan Acar (Türkiye). For any question, request, or formal data-protection enquiry about the processing described here: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+<h2>2. WHAT WE DO NOT COLLECT</h2>
+<p>Crossword Lane has no accounts. We do not collect your name, email address, phone number, or location. Your game progress, statistics, and preferences are stored only on your device, and we have no access to them.</p>
+<h2>3. WHAT IS PROCESSED, WHY, AND ON WHAT BASIS</h2>
+<p>a) Downloading puzzle content. Puzzles and clue images are downloaded to your device from Google Firebase Storage. During that request your device&#x27;s IP address and general device information reach Google&#x27;s servers — technically unavoidable for any app that downloads files over the internet. Firebase App Check is used to verify that the request comes from a genuine copy of the app. Legal basis: performance of a contract and legitimate interests (GDPR Art. 6(1)(b) and 6(1)(f)).</p>
+<p>b) Subscriptions and purchases. Premium+ and Ad-Free subscriptions are managed through RevenueCat, Inc. via the App Store. Your payment details never reach the app; RevenueCat tracks your subscription status using an anonymous identifier tied to your device, not to your identity. Legal basis: performance of a contract (GDPR Art. 6(1)(b)).</p>
+<p>c) Measurement and diagnostics. Firebase Analytics processes general usage statistics such as which screens are used, device type, operating system version, and app version. This data is linked to an &quot;app instance ID&quot; assigned to the copy of the app on your device, not to your identity. Firebase Crashlytics collects crash and diagnostic reports containing the device model, OS version, and technical stack information for the failure. Legal basis: legitimate interests (GDPR Art. 6(1)(f)) — keeping the app working and being able to improve it.</p>
+<p>d) Advertising and consent. Banner, interstitial, and rewarded ads are shown through Google AdMob. Your device advertising identifier (IDFA on iOS) is used for ad personalisation and measurement only with your permission. That permission is requested in two places: the consent screen shown by Google&#x27;s UMP (User Messaging Platform) SDK, and Apple&#x27;s App Tracking Transparency prompt on iOS. If you decline, ads still appear but are not personalised. Legal basis: consent (GDPR Art. 6(1)(a)).</p>
+<p>You can withdraw consent at any time: turn off tracking under iOS Settings → Privacy &amp; Security → Tracking. Where the app&#x27;s Settings screen offers ad privacy options, you can also update your ad consent there.</p>
+<h2>4. INTERNATIONAL TRANSFERS</h2>
+<p>All of the services above are operated by companies outside Türkiye, so to the extent they are used your data is processed abroad:</p>
+<ul><li>Google LLC (United States) and Google Ireland Limited — Firebase Storage, App Check, Analytics, Crashlytics, AdMob, and UMP</li><li>RevenueCat, Inc. (United States) — subscription status management</li><li>Apple Inc. (United States) — purchases, billing, and subscription handling</li></ul>
+<p>Each company&#x27;s own privacy policy governs its own processing.</p>
+<h2>5. RETENTION</h2>
+<p>Data held on your device stays until you delete the app; removing the app removes it. You can also clear it with Settings → Reset progress. Data held on the above services&#x27; own servers is retained for those providers&#x27; own retention periods.</p>
+<h2>6. YOUR RIGHTS</h2>
+<p>If you are in the European Union or the United Kingdom, you have the right to access your data, to have it corrected or erased, to restrict or object to processing, to data portability, and to withdraw consent at any time. You may also lodge a complaint with your national data protection authority.</p>
+<p>If you are in Türkiye, Article 11 of the KVKK gives you the rights to learn whether your personal data is processed, to request information about that processing, to learn its purpose and whether it is used accordingly, to know the third parties to whom it is transferred at home or abroad, to request correction, erasure, or destruction, to require that those actions be notified to the recipients, to object to results produced solely by automated analysis, and to claim compensation for damage caused by unlawful processing.</p>
+<p>Send any request to <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>. Requests are answered within thirty days at the latest.</p>
+<h2>7. CHILDREN</h2>
+<p>The app is designed for users aged 13 and older. We do not knowingly collect data from anyone under 13.</p>
+<h2>8. CHANGES</h2>
+<p>Material changes to this policy are announced in the app, and the &quot;Last updated&quot; date above is revised.</p>
+</section>
+</main>
+<footer>Crossword Lane · <a href="index.html">Tüm belgeler / All documents</a></footer>
 </div>
-
 <script>
-  function showLang(lang) {
-    document.querySelectorAll('section').forEach(function (s) {
-      s.classList.toggle('active', s.id === lang);
-    });
-  }
-  var hash = window.location.hash.replace('#', '');
-  if (hash === 'en' || hash === 'tr') {
-    showLang(hash);
-  } else if ((navigator.language || '').toLowerCase().indexOf('tr') !== 0) {
-    showLang('en');
-  }
+var TITLES={"tr": "Gizlilik Politikası", "en": "Privacy Policy"};
+function pick(l){
+  document.getElementById('tr').hidden = l!=='tr';
+  document.getElementById('en').hidden = l!=='en';
+  document.getElementById('btn-tr').setAttribute('aria-pressed', l==='tr');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.documentElement.lang=l;
+  document.getElementById('pagetitle').textContent=TITLES[l];
+  try{ localStorage.setItem('cwl-lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('cwl-lang'); if(s==='en'||s==='tr') pick(s); }catch(e){}
 </script>
 </body>
 </html>

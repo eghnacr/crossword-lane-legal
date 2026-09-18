@@ -1,144 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Crossword Lane — Kullanım Şartları / Terms of Use</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kullanım Şartları — Crossword Lane</title>
 <style>
-  :root {
-    color-scheme: light dark;
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #6b6b6b;
-    --accent: #7c3aed;
-    --border: #e5e5e5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #14141a;
-      --fg: #f2f2f2;
-      --muted: #a0a0a8;
-      --accent: #b794f6;
-      --border: #2c2c34;
-    }
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-  }
-  .wrap {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 20px 96px;
-  }
-  h1 {
-    font-size: 1.6rem;
-    margin-bottom: 4px;
-  }
-  .updated {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 32px;
-  }
-  h2 {
-    font-size: 1.15rem;
-    margin-top: 40px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-  }
-  p { margin: 12px 0; }
-  a { color: var(--accent); }
-  .lang-switch {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-  .lang-switch a {
-    text-decoration: none;
-    padding: 6px 14px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    font-size: 0.85rem;
-    color: var(--fg);
-  }
-  .lang-switch a:hover { border-color: var(--accent); }
-  section { display: none; }
-  section.active { display: block; }
-  footer {
-    margin-top: 48px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
+:root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5c66;--line:#e4e4ea;--accent:#4a4ae0}
+@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+ font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ -webkit-text-size-adjust:100%}
+.wrap{max-width:44rem;margin:0 auto;padding:2.5rem 1.25rem 5rem}
+header{border-bottom:1px solid var(--line);padding-bottom:1.25rem;margin-bottom:2rem}
+h1{font-size:1.6rem;margin:0 0 1rem;letter-spacing:-.01em}
+h2{font-size:1rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+ margin:2.25rem 0 .6rem;font-weight:700}
+p{margin:0 0 1rem}
+ul{margin:0 0 1rem;padding-left:1.2rem}
+li{margin:0 0 .4rem}
+.meta{color:var(--muted);font-size:.88rem}
+a{color:var(--accent);overflow-wrap:anywhere}
+nav{display:flex;gap:.5rem}
+nav button{font:inherit;font-size:.85rem;padding:.35rem .9rem;border-radius:999px;cursor:pointer;
+ border:1px solid var(--line);background:transparent;color:var(--muted)}
+nav button[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+[hidden]{display:none}
+footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
+ color:var(--muted);font-size:.85rem}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="lang-switch">
-    <a href="#tr" onclick="showLang('tr')">Türkçe</a>
-    <a href="#en" onclick="showLang('en')">English</a>
-  </div>
-
-  <section id="tr" class="active">
-    <h1>Kullanım Şartları</h1>
-    <p class="updated">Son güncelleme: 18 Ağustos 2026</p>
-
-    <p>Crossword Lane, 13 yaş ve üzeri kullanıcılar için tasarlanmış bir çengel bulmaca oyunudur. Uygulamayı kullanarak bu kullanım şartlarını kabul etmiş sayılırsınız. Bu şartları kabul etmiyorsanız uygulamayı kullanmamalısınız.</p>
-
-    <p>Uygulama, eğlence ve kişisel kullanım amacıyla sunulur. Oyundaki bulmacalar, puanlar, ilerleme kayıtları ve özellikler zaman zaman güncellenebilir, değiştirilebilir veya kaldırılabilir. Hizmetin kesintisiz ya da hatasız çalışacağı garanti edilmez.</p>
-
-    <p>Crossword Lane'de hesap oluşturmanız gerekmez. Oyun ilerlemeniz anonim bir kullanıcı kimliğiyle saklanabilir. Uygulamayı kötüye kullanmamak, tersine mühendislik yapmamak, hile veya otomasyon araçlarıyla adil kullanımı bozmamak sizin sorumluluğunuzdadır.</p>
-
-    <p>Premium+ veya Reklamsız abonelikler aylık ya da yıllık olarak sunulabilir ve 7 gün ücretsiz deneme içerebilir. Abonelikler App Store veya Google Play hesabınız üzerinden yönetilir, iptal edilmediği sürece otomatik yenilenir. Ödeme, iade ve iptal işlemleri ilgili mağazanın kurallarına tabidir.</p>
-
-    <p>Uygulamada banner ve geçiş reklamları gösterilebilir. Reklamsız kullanım, uygun abonelik kapsamında sağlanır. Reklamların içeriği üçüncü taraf reklam ağları tarafından belirlenebilir.</p>
-
-    <p>Bu şartlar, uygulamanın güvenli, adil ve sürdürülebilir şekilde kullanılmasını sağlamak için hazırlanmıştır. Şartlarda yapılacak önemli değişiklikler uygulama içinde veya mağaza sayfasında duyurulabilir. Bu uygulama hakkında sorularınız için App Store veya Google Play üzerinden uygulama sayfasını ziyaret edin.</p>
-
-    <h2>İlgili sayfa</h2>
-    <p><a href="privacy.html">Gizlilik Politikası</a></p>
-  </section>
-
-  <section id="en">
-    <h1>Terms of Use</h1>
-    <p class="updated">Last updated: August 18, 2026</p>
-
-    <p>Crossword Lane is a crossword puzzle game designed for users aged 13 and older. By using the app, you agree to these Terms of Use. If you do not agree with these terms, you should not use the app.</p>
-
-    <p>The app is provided for entertainment and personal use. Puzzles, scores, progress records, and features may be updated, changed, or removed from time to time. We do not guarantee that the service will always be uninterrupted or error-free.</p>
-
-    <p>You do not need to create an account to use Crossword Lane. Your game progress may be stored with an anonymous user ID. You are responsible for using the app fairly and not misusing it, reverse engineering it, or using cheats or automation tools.</p>
-
-    <p>Premium+ or Ad-Free subscriptions may be offered monthly or yearly and may include a 7-day free trial. Subscriptions are managed through your App Store or Google Play account and renew automatically unless cancelled. Payments, refunds, and cancellations are subject to the rules of the relevant store.</p>
-
-    <p>The app may display banner and interstitial ads. Ad-free use is available through an eligible subscription. The content of ads may be determined by third-party advertising networks.</p>
-
-    <p>These terms are intended to support safe, fair, and sustainable use of the app. Important changes to these terms may be announced in the app or on the store page. For questions about this app, please visit the app page on the App Store or Google Play.</p>
-
-    <h2>Related page</h2>
-    <p><a href="privacy.html">Privacy Policy</a></p>
-  </section>
-
-  <footer>Crossword Lane</footer>
+<header>
+  <h1 id="pagetitle">Kullanım Şartları</h1>
+  <nav>
+    <button id="btn-tr" aria-pressed="true" onclick="pick('tr')">Türkçe</button>
+    <button id="btn-en" aria-pressed="false" onclick="pick('en')">English</button>
+  </nav>
+</header>
+<main>
+<section id="tr">
+<p class="meta">Son güncelleme: 22 Ağustos 2026 · Sürüm 1.0</p>
+<h2>1. KABUL</h2>
+<p>Crossword Lane, 13 yaş ve üzeri kullanıcılar için hazırlanmış bir çengel bulmaca oyunudur. Uygulamayı kullanarak bu şartları kabul etmiş olursunuz; kabul etmiyorsanız uygulamayı kullanmayınız. Bu şartların tarafı Egehan Acar&#x27;dır (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
+<h2>2. APPLE&#x27;IN STANDART LİSANS SÖZLEŞMESİ</h2>
+<p>Uygulama App Store üzerinden lisanslanır. Buradaki şartlara ek olarak, Apple&#x27;ın Lisanslı Uygulama Son Kullanıcı Lisans Sözleşmesi (Standart EULA) de geçerlidir:</p>
+<p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+<p>Bir çelişki hâlinde, App Store üzerinden yapılan satın almalar bakımından Apple&#x27;ın sözleşmesi üstün tutulur. Apple bu sözleşmenin tarafı değildir ve uygulamadan ya da içeriğinden sorumlu değildir; uygulamaya ilişkin her türlü talep bize yöneltilmelidir.</p>
+<h2>3. LİSANS VE KULLANIM KURALLARI</h2>
+<p>Size, uygulamayı kişisel ve ticari olmayan amaçlarla kullanmanız için devredilemez bir lisans veriyoruz. Uygulamayı tersine mühendisliğe tabi tutmamak, kaynak koduna dönüştürmemek, hile veya otomasyon araçlarıyla oyunun adil işleyişini bozmamak, bulmaca içeriğini ve görselleri çıkarıp yeniden yayınlamak veya dağıtmak amacıyla kullanmamak sizin yükümlülüğünüzdedir.</p>
+<h2>4. ABONELİKLER</h2>
+<p>Premium+ ve Reklamsız abonelikleri aylık veya yıllık olarak sunulabilir. Fiyat, abonelik süresi ve varsa ücretsiz deneme süresi, satın alma işlemi onaylanmadan önce satın alma ekranında gösterilir. Abonelikler, içinde bulunulan dönem sona ermeden en az 24 saat önce iptal edilmedikçe otomatik olarak yenilenir ve ücret Apple Kimliğinize yansıtılır. Aboneliğinizi iOS Ayarlar → [adınız] → Abonelikler bölümünden yönetebilir veya iptal edebilirsiniz. Ücretsiz deneme süresi sunulmuşsa, denemenin kullanılmayan kısmı bir abonelik satın alındığında sona erer.</p>
+<h2>5. ÖDEME VE İADE</h2>
+<p>Tüm ödemeler Apple tarafından tahsil edilir; uygulama ödeme bilgilerinizi görmez ve işlemez. İade talepleri Apple&#x27;ın kendi kurallarına tabidir ve doğrudan Apple&#x27;a yapılır (reportaproblem.apple.com). İade verme yetkimiz bulunmamaktadır.</p>
+<h2>6. İÇERİK VE DEĞİŞİKLİKLER</h2>
+<p>Bulmacalar, puanlama, ilerleme kayıtları ve uygulama özellikleri zaman zaman güncellenebilir, değiştirilebilir veya kaldırılabilir. Önemli değişiklikler uygulama içinde veya mağaza sayfasında duyurulabilir.</p>
+<h2>7. REKLAMLAR</h2>
+<p>Uygulamada banner, geçiş ve ödüllü reklamlar gösterilebilir. Reklamların içeriği üçüncü taraf reklam ağları tarafından belirlenir ve bu içerikten sorumlu değiliz. Uygun bir abonelik, kapsamı dahilindeki reklamları kaldırır.</p>
+<h2>8. GARANTİ REDDİ</h2>
+<p>Uygulama &quot;olduğu gibi&quot; ve &quot;mevcut hâliyle&quot; sunulur. Yasaların izin verdiği azami ölçüde, açık veya zımni hiçbir garanti verilmemektedir; hizmetin kesintisiz, hatasız veya veri kaybı olmadan çalışacağı garanti edilmez. Oyun ilerlemeniz yalnızca cihazınızda saklandığından, cihazın kaybı veya sıfırlanması ya da uygulamanın silinmesi ilerlemenizin kaybı anlamına gelir.</p>
+<h2>9. SORUMLULUĞUN SINIRLANDIRILMASI</h2>
+<p>Yasaların izin verdiği azami ölçüde, uygulamanın kullanımından veya kullanılamamasından doğan dolaylı, arızi, özel veya sonuç niteliğindeki zararlardan sorumlu tutulamayız. Her hâlükârda toplam sorumluluğumuz, talebin doğduğu tarihten önceki on iki ay içinde uygulama için ödediğiniz tutarla sınırlıdır. Bu sınırlamalar, tüketici mevzuatının emredici hükümlerini ve sorumluluğun hukuken sınırlandırılamayacağı hâlleri etkilemez.</p>
+<h2>10. UYGULANACAK HUKUK</h2>
+<p>Bu şartlara Türkiye Cumhuriyeti hukuku uygulanır. Tüketici sıfatıyla hareket ediyorsanız, mutat meskeninizin bulunduğu ülkenin tüketici mevzuatının size tanıdığı emredici haklar saklıdır ve bu madde o haklardan yararlanmanızı engellemez.</p>
+<h2>11. İLETİŞİM</h2>
+<p>Bu şartlarla ilgili sorularınız için: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+</section>
+<section id="en" hidden>
+<p class="meta">Last updated: 22 August 2026 · Version 1.0</p>
+<h2>1. ACCEPTANCE</h2>
+<p>Crossword Lane is a crossword puzzle game made for users aged 13 and older. By using the app you accept these terms; if you do not accept them, do not use the app. These terms are between you and Egehan Acar (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
+<h2>2. APPLE&#x27;S STANDARD LICENCE AGREEMENT</h2>
+<p>The app is licensed through the App Store. In addition to the terms here, Apple&#x27;s Licensed Application End User License Agreement (Standard EULA) applies:</p>
+<p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+<p>In case of conflict, Apple&#x27;s agreement prevails for purchases made through the App Store. Apple is not a party to these terms and is not responsible for the app or its content; any claim relating to the app must be directed to us.</p>
+<h2>3. LICENCE AND RULES OF USE</h2>
+<p>We grant you a non-transferable licence to use the app for personal, non-commercial purposes. You agree not to reverse engineer or decompile the app, not to use cheats or automation tools that undermine fair play, and not to extract puzzle content or images in order to republish or distribute them.</p>
+<h2>4. SUBSCRIPTIONS</h2>
+<p>Premium+ and Ad-Free subscriptions may be offered monthly or yearly. The price, the subscription period, and any free trial period are shown on the purchase screen before you confirm the purchase. Subscriptions renew automatically and are charged to your Apple Account unless cancelled at least 24 hours before the end of the current period. You can manage or cancel a subscription under iOS Settings → [your name] → Subscriptions. Where a free trial is offered, any unused part of it ends when a subscription is purchased.</p>
+<h2>5. PAYMENT AND REFUNDS</h2>
+<p>All payments are collected by Apple; the app never sees or processes your payment details. Refunds are governed by Apple&#x27;s own rules and are requested directly from Apple (reportaproblem.apple.com). We have no ability to issue refunds.</p>
+<h2>6. CONTENT AND CHANGES</h2>
+<p>Puzzles, scoring, progress records, and app features may be updated, changed, or removed from time to time. Material changes may be announced in the app or on the store page.</p>
+<h2>7. ADVERTISING</h2>
+<p>The app may show banner, interstitial, and rewarded ads. Ad content is determined by third-party ad networks and we are not responsible for it. An eligible subscription removes the ads it covers.</p>
+<h2>8. DISCLAIMER OF WARRANTIES</h2>
+<p>The app is provided &quot;as is&quot; and &quot;as available&quot;. To the fullest extent permitted by law, no warranties of any kind are given, express or implied, and we do not warrant that the service will be uninterrupted, error-free, or free from data loss. Because your progress is stored only on your device, losing or resetting the device, or deleting the app, means losing your progress.</p>
+<h2>9. LIMITATION OF LIABILITY</h2>
+<p>To the fullest extent permitted by law, we are not liable for indirect, incidental, special, or consequential damages arising from your use of or inability to use the app. In any case our total liability is limited to the amount you paid for the app in the twelve months before the claim arose. These limits do not affect mandatory consumer protection rights, or liability that cannot be limited by law.</p>
+<h2>10. GOVERNING LAW</h2>
+<p>These terms are governed by the laws of the Republic of Türkiye. If you are acting as a consumer, the mandatory consumer protection rights of the country where you habitually reside are reserved, and nothing in this section prevents you from relying on them.</p>
+<h2>11. CONTACT</h2>
+<p>For questions about these terms: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+</section>
+</main>
+<footer>Crossword Lane · <a href="index.html">Tüm belgeler / All documents</a></footer>
 </div>
-
 <script>
-  function showLang(lang) {
-    document.querySelectorAll('section').forEach(function (s) {
-      s.classList.toggle('active', s.id === lang);
-    });
-  }
-  var hash = window.location.hash.replace('#', '');
-  if (hash === 'en' || hash === 'tr') {
-    showLang(hash);
-  } else if ((navigator.language || '').toLowerCase().indexOf('tr') !== 0) {
-    showLang('en');
-  }
+var TITLES={"tr": "Kullanım Şartları", "en": "Terms of Use"};
+function pick(l){
+  document.getElementById('tr').hidden = l!=='tr';
+  document.getElementById('en').hidden = l!=='en';
+  document.getElementById('btn-tr').setAttribute('aria-pressed', l==='tr');
+  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  document.documentElement.lang=l;
+  document.getElementById('pagetitle').textContent=TITLES[l];
+  try{ localStorage.setItem('cwl-lang', l); }catch(e){}
+}
+try{ var s=localStorage.getItem('cwl-lang'); if(s==='en'||s==='tr') pick(s); }catch(e){}
 </script>
 </body>
 </html>
