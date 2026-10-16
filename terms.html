@@ -37,6 +37,7 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
   <nav>
     <button id="btn-tr" aria-pressed="true" onclick="pick('tr')">Türkçe</button>
     <button id="btn-en" aria-pressed="false" onclick="pick('en')">English</button>
+    <button id="btn-es" aria-pressed="false" onclick="pick('es')">Español</button>
   </nav>
 </header>
 <main>
@@ -94,21 +95,56 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <h2>11. CONTACT</h2>
 <p>For questions about these terms: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
 </section>
+<section id="es" hidden>
+<p class="meta">Última actualización: 5 de octubre de 2026 · Versión 1.2</p>
+<p>Esta es una traducción del texto original en inglés. Si las dos versiones no coinciden, prevalece la versión en inglés.</p>
+<h2>1. ACEPTACIÓN</h2>
+<p>Crossword Lane es un juego de crucigramas pensado para usuarios de 13 años o más. Al usar la app aceptas estos términos; si no los aceptas, no uses la app. Estos términos se celebran entre tú y Egehan Acar (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
+<h2>2. ACUERDO DE LICENCIA ESTÁNDAR DE APPLE</h2>
+<p>La app se distribuye con licencia a través del App Store. Además de los términos aquí recogidos, se aplica el Acuerdo de Licencia de Usuario Final de Aplicaciones con Licencia de Apple (EULA estándar):</p>
+<p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+<p>En caso de conflicto, el acuerdo de Apple prevalece para las compras realizadas a través del App Store. Apple no es parte de estos términos ni es responsable de la app ni de su contenido; cualquier reclamación relacionada con la app debe dirigirse a nosotros.</p>
+<h2>3. LICENCIA Y NORMAS DE USO</h2>
+<p>Te concedemos una licencia intransferible para usar la app con fines personales y no comerciales. Te comprometes a no aplicar ingeniería inversa ni descompilar la app, a no usar trampas ni herramientas de automatización que perjudiquen el juego limpio, y a no extraer los crucigramas ni las imágenes para volver a publicarlos o distribuirlos.</p>
+<h2>4. SUSCRIPCIONES</h2>
+<p>Las suscripciones Premium+ y Sin anuncios pueden ofrecerse con pago mensual o anual. El precio, el periodo de la suscripción y cualquier periodo de prueba gratis se muestran en la pantalla de compra antes de que confirmes la compra. Las suscripciones se renuevan automáticamente y se cargan a tu Cuenta de Apple, salvo que las canceles al menos 24 horas antes del final del periodo en curso. Puedes gestionar o cancelar una suscripción en Ajustes de iOS → [tu nombre] → Suscripciones. Si se ofrece una prueba gratis, la parte no utilizada termina al comprar una suscripción.</p>
+<h2>5. PAGOS Y REEMBOLSOS</h2>
+<p>Apple cobra todos los pagos; la app nunca ve ni procesa tus datos de pago. Los reembolsos se rigen por las normas de Apple y se solicitan directamente a Apple (reportaproblem.apple.com). Nosotros no podemos emitir reembolsos.</p>
+<h2>6. CONTENIDO Y CAMBIOS</h2>
+<p>Los crucigramas, la puntuación, los registros de progreso y las funciones de la app pueden actualizarse, modificarse o retirarse de vez en cuando. Los cambios importantes pueden anunciarse en la app o en la página de la tienda.</p>
+<h2>7. PUBLICIDAD</h2>
+<p>La app puede mostrar anuncios de banner, anuncios intersticiales y anuncios con recompensa. El contenido de los anuncios lo deciden redes publicitarias de terceros y no somos responsables de él. La suscripción correspondiente elimina los anuncios que cubre.</p>
+<h2>8. EXENCIÓN DE GARANTÍAS</h2>
+<p>La app se ofrece &quot;tal cual&quot; y &quot;según disponibilidad&quot;. En la máxima medida permitida por la ley, no se otorga ninguna garantía, expresa ni implícita, y no garantizamos que el servicio funcione sin interrupciones, sin errores o sin pérdida de datos. Como tu progreso se guarda solo en tu dispositivo, si pierdes o restableces el dispositivo, o si eliminas la app, pierdes tu progreso.</p>
+<h2>9. LIMITACIÓN DE RESPONSABILIDAD</h2>
+<p>En la máxima medida permitida por la ley, no somos responsables de daños indirectos, incidentales, especiales o consecuentes derivados del uso de la app o de la imposibilidad de usarla. En cualquier caso, nuestra responsabilidad total se limita al importe que pagaste por la app en los doce meses anteriores al hecho que originó la reclamación. Estos límites no afectan a los derechos obligatorios de protección del consumidor ni a la responsabilidad que la ley no permite limitar.</p>
+<h2>10. LEY APLICABLE</h2>
+<p>Estos términos se rigen por las leyes de la República de Türkiye. Si actúas como consumidor, quedan a salvo los derechos obligatorios de protección del consumidor del país en el que resides habitualmente, y nada de lo dispuesto en esta sección te impide invocarlos.</p>
+<h2>11. CONTACTO</h2>
+<p>Para cualquier pregunta sobre estos términos: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+</section>
 </main>
 <footer>Crossword Lane · <a href="./">crosswordlane.com</a></footer>
 </div>
 <script>
-var TITLES={"tr": "Kullanım Şartları", "en": "Terms of Use"};
+var TITLES={"tr": "Kullanım Şartları", "en": "Terms of Use", "es": "Términos de uso"};
 function pick(l){
-  document.getElementById('tr').hidden = l!=='tr';
-  document.getElementById('en').hidden = l!=='en';
-  document.getElementById('btn-tr').setAttribute('aria-pressed', l==='tr');
-  document.getElementById('btn-en').setAttribute('aria-pressed', l==='en');
+  for(var k in TITLES){
+    document.getElementById(k).hidden = l!==k;
+    document.getElementById('btn-'+k).setAttribute('aria-pressed', l===k);
+  }
   document.documentElement.lang=l;
   document.getElementById('pagetitle').textContent=TITLES[l];
   try{ localStorage.setItem('cwl-lang', l); }catch(e){}
 }
-try{ var s=localStorage.getItem('cwl-lang'); if(s==='en'||s==='tr') pick(s); }catch(e){}
+// A saved choice wins; otherwise the browser's language, so a Spanish phone
+// opens on Spanish rather than on the first section; any other language gets
+// English, as in the app.
+var s=null;
+try{ s=localStorage.getItem('cwl-lang'); }catch(e){}
+if(!TITLES.hasOwnProperty(s)) s=(navigator.language||'').slice(0,2).toLowerCase();
+if(!TITLES.hasOwnProperty(s)) s='en';
+if(TITLES.hasOwnProperty(s)) pick(s);
 </script>
 </body>
 </html>
