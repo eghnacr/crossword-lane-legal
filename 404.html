@@ -88,11 +88,12 @@ a:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
 (function () {
   var t = {
     tr: { title: 'Bu kare boş kaldı', body: 'Aradığın sayfa burada değil.', home: 'Crossword Lane’e dön' },
-    en: { title: 'This square is empty', body: 'The page you are looking for is not here.', home: 'Back to Crossword Lane' }
+    en: { title: 'This square is empty', body: 'The page you are looking for is not here.', home: 'Back to Crossword Lane' },
+    es: { title: 'Esta casilla está vacía', body: 'La página que buscas no está aquí.', home: 'Volver a Crossword Lane' }
   };
   var l = 'en';
-  try { var s = localStorage.getItem('cl-lang'); if (s === 'tr' || s === 'en') l = s; else throw 0; }
-  catch (e) { var n = (navigator.languages && navigator.languages[0]) || navigator.language || ''; l = /^tr\b/i.test(n) ? 'tr' : 'en'; }
+  try { var s = localStorage.getItem('cl-lang'); if (t.hasOwnProperty(s)) l = s; else throw 0; }
+  catch (e) { var n = (navigator.languages && navigator.languages[0]) || navigator.language || ''; var b = n.slice(0, 2).toLowerCase(); l = t.hasOwnProperty(b) ? b : 'en'; }
   document.documentElement.lang = l;
   document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t[l][el.getAttribute('data-i18n')]; });
 })();
