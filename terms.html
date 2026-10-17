@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Kullanım Şartları — Crossword Lane</title>
+<title>Terms of Use — Crossword Lane</title>
 <style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5c66;--line:#e4e4ea;--accent:#4a4ae0}
 @media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
@@ -33,15 +33,15 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <body>
 <div class="wrap">
 <header>
-  <h1 id="pagetitle">Kullanım Şartları</h1>
+  <h1 id="pagetitle">Terms of Use</h1>
   <nav>
-    <button id="btn-tr" aria-pressed="true" onclick="pick('tr')">Türkçe</button>
-    <button id="btn-en" aria-pressed="false" onclick="pick('en')">English</button>
+    <button id="btn-tr" aria-pressed="false" onclick="pick('tr')">Türkçe</button>
+    <button id="btn-en" aria-pressed="true" onclick="pick('en')">English</button>
     <button id="btn-es" aria-pressed="false" onclick="pick('es')">Español</button>
   </nav>
 </header>
 <main>
-<section id="tr">
+<section id="tr" hidden>
 <p class="meta">Son güncelleme: 5 Ekim 2026 · Sürüm 1.2</p>
 <h2>1. KABUL</h2>
 <p>Crossword Lane, 13 yaş ve üzeri kullanıcılar için hazırlanmış bir çengel bulmaca oyunudur. Uygulamayı kullanarak bu şartları kabul etmiş olursunuz; kabul etmiyorsanız uygulamayı kullanmayınız. Bu şartların tarafı Egehan Acar&#x27;dır (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
@@ -68,7 +68,7 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <h2>11. İLETİŞİM</h2>
 <p>Bu şartlarla ilgili sorularınız için: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
 </section>
-<section id="en" hidden>
+<section id="en">
 <p class="meta">Last updated: 5 October 2026 · Version 1.2</p>
 <h2>1. ACCEPTANCE</h2>
 <p>Crossword Lane is a crossword puzzle game made for users aged 13 and older. By using the app you accept these terms; if you do not accept them, do not use the app. These terms are between you and Egehan Acar (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
@@ -137,11 +137,11 @@ function pick(l){
   document.getElementById('pagetitle').textContent=TITLES[l];
   try{ localStorage.setItem('cwl-lang', l); }catch(e){}
 }
-// A saved choice wins; otherwise the browser's language, so a Spanish phone
-// opens on Spanish rather than on the first section; any other language gets
-// English, as in the app.
-var s=null;
-try{ s=localStorage.getItem('cwl-lang'); }catch(e){}
+// The app's language (?lang=, sent by the in-app "open in browser") wins, then
+// a saved choice, then the browser's language; anything else gets English, as
+// in the app.
+var s=new URLSearchParams(location.search).get('lang');
+if(!TITLES.hasOwnProperty(s)) { s=null; try{ s=localStorage.getItem('cwl-lang'); }catch(e){} }
 if(!TITLES.hasOwnProperty(s)) s=(navigator.language||'').slice(0,2).toLowerCase();
 if(!TITLES.hasOwnProperty(s)) s='en';
 if(TITLES.hasOwnProperty(s)) pick(s);
