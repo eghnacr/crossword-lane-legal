@@ -38,6 +38,7 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
     <button id="btn-tr" aria-pressed="false" onclick="pick('tr')">Türkçe</button>
     <button id="btn-en" aria-pressed="true" onclick="pick('en')">English</button>
     <button id="btn-es" aria-pressed="false" onclick="pick('es')">Español</button>
+    <button id="btn-fr" aria-pressed="false" onclick="pick('fr')">Français</button>
   </nav>
 </header>
 <main>
@@ -123,11 +124,39 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <h2>11. CONTACTO</h2>
 <p>Para cualquier pregunta sobre estos términos: <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
 </section>
+<section id="fr" hidden>
+<p class="meta">Dernière mise à jour : 5 octobre 2026 · Version 1.2</p>
+<p>Ceci est une traduction du texte original en anglais. En cas de divergence entre les deux versions, la version anglaise prévaut.</p>
+<h2>1. ACCEPTATION</h2>
+<p>Crossword Lane est un jeu de mots fléchés destiné aux utilisateurs de 13 ans et plus. En utilisant l’app, vous acceptez ces conditions ; si vous ne les acceptez pas, n’utilisez pas l’app. Ces conditions sont conclues entre vous et Egehan Acar (<a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a>).</p>
+<h2>2. CONTRAT DE LICENCE STANDARD D’APPLE</h2>
+<p>L’app est concédée sous licence via l’App Store. En plus des présentes conditions, le Contrat de licence de l’utilisateur final des applications sous licence d’Apple (CLUF standard) s’applique :</p>
+<p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
+<p>En cas de conflit, le contrat d’Apple prévaut pour les achats effectués via l’App Store. Apple n’est pas partie aux présentes conditions et n’est pas responsable de l’app ni de son contenu ; toute réclamation relative à l’app doit nous être adressée.</p>
+<h2>3. LICENCE ET RÈGLES D’UTILISATION</h2>
+<p>Nous vous accordons une licence non transférable d’utilisation de l’app à des fins personnelles et non commerciales. Vous vous engagez à ne pas décompiler l’app ni en faire l’ingénierie inverse, à ne pas utiliser de triches ou d’outils d’automatisation qui nuisent à l’équité du jeu, et à ne pas extraire le contenu des grilles ou les images pour les republier ou les distribuer.</p>
+<h2>4. ABONNEMENTS</h2>
+<p>Des abonnements Premium+ et Sans publicité peuvent être proposés au mois ou à l’année. Le prix, la durée de l’abonnement et toute période d’essai gratuit sont indiqués sur l’écran d’achat avant que vous confirmiez l’achat. Les abonnements se renouvellent automatiquement et sont débités sur votre Compte Apple, sauf s’ils sont annulés au moins 24 heures avant la fin de la période en cours. Vous pouvez gérer ou annuler un abonnement dans Réglages d’iOS → [votre nom] → Abonnements. Lorsqu’un essai gratuit est proposé, la partie non utilisée de cet essai prend fin à l’achat d’un abonnement.</p>
+<h2>5. PAIEMENT ET REMBOURSEMENTS</h2>
+<p>Tous les paiements sont encaissés par Apple ; l’app ne voit ni ne traite jamais vos données de paiement. Les remboursements sont régis par les règles d’Apple et se demandent directement à Apple (reportaproblem.apple.com). Nous n’avons pas la possibilité d’effectuer des remboursements.</p>
+<h2>6. CONTENU ET MODIFICATIONS</h2>
+<p>Les grilles, le calcul des scores, les données de progression et les fonctionnalités de l’app peuvent être mis à jour, modifiés ou supprimés de temps à autre. Les modifications importantes peuvent être annoncées dans l’app ou sur la page de la boutique.</p>
+<h2>7. PUBLICITÉ</h2>
+<p>L’app peut afficher des bannières, des publicités interstitielles et des publicités avec récompense. Le contenu des publicités est déterminé par des régies publicitaires tierces et nous n’en sommes pas responsables. L’abonnement correspondant supprime les publicités qu’il couvre.</p>
+<h2>8. EXCLUSION DE GARANTIES</h2>
+<p>L’app est fournie « telle quelle » et « selon disponibilité ». Dans toute la mesure permise par la loi, aucune garantie d’aucune sorte, expresse ou implicite, n’est donnée, et nous ne garantissons pas que le service sera ininterrompu, exempt d’erreurs ou de pertes de données. Votre progression n’étant stockée que sur votre appareil, la perte ou la réinitialisation de l’appareil, ou la suppression de l’app, entraîne la perte de votre progression.</p>
+<h2>9. LIMITATION DE RESPONSABILITÉ</h2>
+<p>Dans toute la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects, accessoires, spéciaux ou consécutifs résultant de votre utilisation de l’app ou de l’impossibilité de l’utiliser. En tout état de cause, notre responsabilité totale est limitée au montant que vous avez payé pour l’app au cours des douze mois précédant la naissance de la réclamation. Ces limites n’affectent pas les droits impératifs de protection des consommateurs, ni la responsabilité qui ne peut pas être limitée par la loi.</p>
+<h2>10. DROIT APPLICABLE</h2>
+<p>Les présentes conditions sont régies par les lois de la République de Türkiye. Si vous agissez en tant que consommateur, les droits impératifs de protection des consommateurs du pays où vous résidez habituellement sont réservés, et rien dans la présente section ne vous empêche de vous en prévaloir.</p>
+<h2>11. CONTACT</h2>
+<p>Pour toute question sur ces conditions : <a href="mailto:eghnacr@gmail.com">eghnacr@gmail.com</a></p>
+</section>
 </main>
 <footer>Crossword Lane · <a href="./">crosswordlane.com</a></footer>
 </div>
 <script>
-var TITLES={"tr": "Kullanım Şartları", "en": "Terms of Use", "es": "Términos de uso"};
+var TITLES={"tr": "Kullanım Şartları", "en": "Terms of Use", "es": "Términos de uso", "fr": "Conditions d’utilisation"};
 function pick(l){
   for(var k in TITLES){
     document.getElementById(k).hidden = l!==k;
