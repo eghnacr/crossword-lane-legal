@@ -6,7 +6,12 @@
 <title>Privacy Policy — Crossword Lane</title>
 <style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5c66;--line:#e4e4ea;--accent:#4a4ae0}
-@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+:root[data-theme=dark]{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}
+.embed body{background:transparent}
+.embed header,.embed footer{display:none}
+.embed .wrap{padding:1rem 1.25rem 2.5rem}
+.embed h2:first-child{margin-top:0}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);
  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -71,10 +76,14 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Uygulama 13 yaş ve üzeri kullanıcılar için tasarlanmıştır. Bilerek 13 yaşından küçük kullanıcılardan veri toplanmaz.</p>
 <h2>8. DEĞİŞİKLİKLER</h2>
 <p>Bu metinde yapılan önemli değişiklikler uygulama içinde duyurulur ve yukarıdaki &quot;Son güncelleme&quot; tarihi güncellenir.</p>
+<div data-store="apple">
 <h2>9. UYGULAMAYI APP STORE&#x27;DAN EDİNDİYSENİZ</h2>
 <p>Satın alma ve abonelikler App Store üzerinden Apple tarafından yürütülür. iPhone ve iPad&#x27;de reklam kimliği IDFA&#x27;dır ve yalnızca izniniz dahilinde kullanılır: UMP rıza ekranının yanı sıra Apple&#x27;ın App Tracking Transparency sorusu da bu izni ister. İzleme iznini dilediğiniz zaman iOS Ayarlar → Gizlilik ve Güvenlik → İzleme bölümünden kapatabilirsiniz. Firebase App Check, uygulamayı Apple&#x27;ın App Attest hizmetiyle doğrular.</p>
+</div>
+<div data-store="google">
 <h2>9. UYGULAMAYI GOOGLE PLAY&#x27;DEN EDİNDİYSENİZ</h2>
 <p>Satın alma ve abonelikler Google Play Faturalandırma üzerinden Google LLC tarafından yürütülür. Android&#x27;de reklam kimliği, Android reklam kimliğidir (AAID). Android&#x27;de App Tracking Transparency sorusu yoktur: UMP rıza ekranının gösterildiği yerlerde reklamların kişiselleştirilip kişiselleştirilmeyeceğini oradaki seçiminiz belirler; diğer yerlerde, reklam kimliğini silmediğiniz, sıfırlamadığınız veya cihaz ayarlarınızdan reklam kişiselleştirmesini kapatmadığınız sürece (çoğu cihazda: Ayarlar → Gizlilik → Reklamlar) reklamlar kişiselleştirilebilir. Firebase App Check, uygulamayı Google Play Integrity ile doğrular. 3-e bendindeki Apple Ads atfı yalnızca iOS&#x27;ta yapılır.</p>
+</div>
 </section>
 <section id="en">
 <p class="meta">Last updated: 18 October 2026 · Version 1.5</p>
@@ -104,10 +113,14 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>The app is designed for users aged 13 and older. We do not knowingly collect data from anyone under 13.</p>
 <h2>8. CHANGES</h2>
 <p>Material changes to this policy are announced in the app, and the &quot;Last updated&quot; date above is revised.</p>
+<div data-store="apple">
 <h2>9. IF YOU GOT THE APP FROM THE APP STORE</h2>
 <p>Purchases and subscriptions are handled by Apple through the App Store. On iPhone and iPad, the advertising identifier is the IDFA, and it is used only with your permission: besides the UMP consent screen, Apple&#x27;s App Tracking Transparency prompt asks for it. You can turn tracking off at any time under iOS Settings → Privacy &amp; Security → Tracking. Firebase App Check checks the app with Apple&#x27;s App Attest.</p>
+</div>
+<div data-store="google">
 <h2>9. IF YOU GOT THE APP FROM GOOGLE PLAY</h2>
 <p>Purchases and subscriptions are handled by Google LLC through Google Play Billing. On Android, the advertising identifier is the Android advertising ID (AAID). Android has no App Tracking Transparency prompt: where the UMP consent screen is shown, your choice there decides whether ads are personalised; elsewhere ads may be personalised unless you delete or reset the advertising ID or turn off ad personalisation in your device settings (on most devices: Settings → Privacy → Ads). Firebase App Check checks the app with Google Play Integrity. The Apple Ads attribution in 3(e) happens only on iOS.</p>
+</div>
 </section>
 <section id="es" hidden>
 <p class="meta">Última actualización: 18 de octubre de 2026 · Versión 1.5</p>
@@ -138,10 +151,14 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>La app está pensada para usuarios de 13 años o más. No recogemos a sabiendas datos de menores de 13 años.</p>
 <h2>8. CAMBIOS</h2>
 <p>Los cambios importantes en esta política se anuncian en la app, y se actualiza la fecha de &quot;Última actualización&quot; que figura arriba.</p>
+<div data-store="apple">
 <h2>9. SI OBTUVISTE LA APP EN EL APP STORE</h2>
 <p>Apple gestiona las compras y suscripciones a través del App Store. En iPhone y iPad, el identificador de publicidad es el IDFA y solo se usa con tu permiso: además de la pantalla de consentimiento de UMP, lo pide el aviso de Transparencia en el Rastreo de Apps de Apple. Puedes desactivar el rastreo en cualquier momento en Ajustes de iOS → Privacidad y seguridad → Rastreo. Firebase App Check verifica la app con App Attest de Apple.</p>
+</div>
+<div data-store="google">
 <h2>9. SI OBTUVISTE LA APP EN GOOGLE PLAY</h2>
 <p>Google LLC gestiona las compras y suscripciones con la Facturación de Google Play. En Android, el identificador de publicidad es el ID de publicidad de Android (AAID). Android no tiene el aviso de Transparencia en el Rastreo de Apps: donde se muestra la pantalla de consentimiento de UMP, tu elección en ella decide si los anuncios se personalizan; en otros lugares, los anuncios pueden personalizarse salvo que elimines o restablezcas el ID de publicidad o desactives la personalización de anuncios en los ajustes del dispositivo (en la mayoría: Ajustes → Privacidad → Anuncios). Firebase App Check verifica la app con Google Play Integrity. La atribución de Apple Ads del apartado 3(e) solo se realiza en iOS.</p>
+</div>
 </section>
 <section id="fr" hidden>
 <p class="meta">Dernière mise à jour : 18 octobre 2026 · Version 1.5</p>
@@ -172,10 +189,14 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>L’app est conçue pour les utilisateurs de 13 ans et plus. Nous ne collectons pas sciemment de données concernant des personnes de moins de 13 ans.</p>
 <h2>8. MODIFICATIONS</h2>
 <p>Les modifications importantes de cette politique sont annoncées dans l’app, et la date de « Dernière mise à jour » ci-dessus est actualisée.</p>
+<div data-store="apple">
 <h2>9. SI VOUS AVEZ OBTENU L’APP SUR L’APP STORE</h2>
 <p>Les achats et abonnements sont gérés par Apple via l’App Store. Sur iPhone et iPad, l’identifiant publicitaire est l’IDFA, et il n’est utilisé qu’avec votre autorisation : en plus de l’écran de consentement UMP, la demande App Tracking Transparency d’Apple la sollicite. Vous pouvez désactiver le suivi à tout moment dans Réglages d’iOS → Confidentialité et sécurité → Suivi. Firebase App Check vérifie l’app avec App Attest d’Apple.</p>
+</div>
+<div data-store="google">
 <h2>9. SI VOUS AVEZ OBTENU L’APP SUR GOOGLE PLAY</h2>
 <p>Les achats et abonnements passent par la Facturation Google Play (Google LLC). Sur Android, l’identifiant publicitaire est l’identifiant publicitaire Android (AAID). Android n’a pas de demande App Tracking Transparency : là où l’écran de consentement UMP s’affiche, votre choix sur cet écran décide si les publicités sont personnalisées ; ailleurs, elles peuvent l’être, sauf si vous supprimez ou réinitialisez l’identifiant publicitaire ou désactivez la personnalisation des annonces dans les réglages de l’appareil (sur la plupart des appareils : Paramètres → Confidentialité → Annonces). Firebase App Check vérifie l’app avec Google Play Integrity. L’attribution Apple Ads décrite au point 3(e) n’a lieu que sur iOS.</p>
+</div>
 </section>
 <section id="de" hidden>
 <p class="meta">Zuletzt aktualisiert: 18. Oktober 2026 · Version 1.5</p>
@@ -206,10 +227,14 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Die App ist für Personen ab 13 Jahren bestimmt. Wir erheben nicht wissentlich Daten von Personen unter 13 Jahren.</p>
 <h2>8. ÄNDERUNGEN</h2>
 <p>Wesentliche Änderungen dieser Erklärung werden in der App angekündigt, und das Datum „Zuletzt aktualisiert“ oben wird angepasst.</p>
+<div data-store="apple">
 <h2>9. WENN SIE DIE APP ÜBER DEN APP STORE BEZOGEN HABEN</h2>
 <p>Käufe und Abonnements wickelt Apple über den App Store ab. Auf iPhone und iPad ist die Werbe-ID die IDFA, und sie wird nur mit Ihrer Erlaubnis verwendet: Neben dem UMP-Einwilligungsbildschirm fragt auch die Abfrage „App Tracking Transparency“ von Apple danach. Sie können das Tracking jederzeit unter iOS-Einstellungen → Datenschutz &amp; Sicherheit → Tracking deaktivieren. Firebase App Check prüft die App mit App Attest von Apple.</p>
+</div>
+<div data-store="google">
 <h2>9. WENN SIE DIE APP ÜBER GOOGLE PLAY BEZOGEN HABEN</h2>
 <p>Käufe und Abonnements laufen über Google Play Billing (Google LLC). Unter Android ist die Werbe-ID die Android-Werbe-ID (AAID). Android hat keine Abfrage „App Tracking Transparency“: Wo der UMP-Einwilligungsbildschirm angezeigt wird, entscheidet Ihre Auswahl dort, ob Werbung personalisiert wird; anderswo kann Werbung personalisiert werden, sofern Sie die Werbe-ID nicht löschen oder zurücksetzen oder die Personalisierung von Werbung in den Geräteeinstellungen nicht deaktivieren (auf den meisten Geräten: Einstellungen → Datenschutz → Werbung). Firebase App Check prüft die App mit Google Play Integrity. Die Apple Ads-Attribution aus 3(e) findet nur unter iOS statt.</p>
+</div>
 </section>
 </main>
 <footer>Crossword Lane · <a href="./">crosswordlane.com</a></footer>
@@ -228,7 +253,18 @@ function pick(l){
 // The app's language (?lang=, sent by the in-app "open in browser") wins, then
 // a saved choice, then the browser's language; anything else gets English, as
 // in the app.
-var s=new URLSearchParams(location.search).get('lang');
+var q=new URLSearchParams(location.search);
+// The app shows its own store's section only, without the page's own chrome,
+// in its own colour scheme.
+var store=q.get('store');
+if(store==='apple'||store==='google'){
+  var parts=document.querySelectorAll('[data-store]');
+  for(var i=0;i<parts.length;i++) parts[i].hidden=parts[i].getAttribute('data-store')!==store;
+}
+if(q.get('embed')==='1') document.documentElement.classList.add('embed');
+var theme=q.get('theme');
+if(theme==='dark'||theme==='light') document.documentElement.setAttribute('data-theme',theme);
+var s=q.get('lang');
 if(!TITLES.hasOwnProperty(s)) { s=null; try{ s=localStorage.getItem('cwl-lang'); }catch(e){} }
 if(!TITLES.hasOwnProperty(s)) s=(navigator.language||'').slice(0,2).toLowerCase();
 if(!TITLES.hasOwnProperty(s)) s='en';

@@ -6,7 +6,12 @@
 <title>Terms of Use — Crossword Lane</title>
 <style>
 :root{--bg:#fff;--fg:#1b1b1f;--muted:#5c5c66;--line:#e4e4ea;--accent:#4a4ae0}
-@media(prefers-color-scheme:dark){:root{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}}
+:root[data-theme=dark]{--bg:#141416;--fg:#e9e9ee;--muted:#a0a0ad;--line:#2c2c31;--accent:#9d9dff}
+.embed body{background:transparent}
+.embed header,.embed footer{display:none}
+.embed .wrap{padding:1rem 1.25rem 2.5rem}
+.embed h2:first-child{margin-top:0}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);
  font:16px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -67,13 +72,17 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Bu şartlara Türkiye Cumhuriyeti hukuku uygulanır. Tüketici sıfatıyla hareket ediyorsanız, mutat meskeninizin bulunduğu ülkenin tüketici mevzuatının size tanıdığı emredici haklar saklıdır ve bu madde o haklardan yararlanmanızı engellemez.</p>
 <h2>11. İLETİŞİM</h2>
 <p>Bu şartlarla ilgili sorularınız için: <a href="mailto:support@crosswordlane.com">support@crosswordlane.com</a></p>
+<div data-store="apple">
 <h2>12. UYGULAMAYI APP STORE&#x27;DAN EDİNDİYSENİZ</h2>
 <p>Buradaki şartlara ek olarak, Apple&#x27;ın Lisanslı Uygulama Son Kullanıcı Lisans Sözleşmesi (Standart EULA) de geçerlidir:</p>
 <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
 <p>Bir çelişki hâlinde, App Store üzerinden yapılan satın almalar bakımından Apple&#x27;ın sözleşmesi üstün tutulur. Apple bu sözleşmenin tarafı değildir ve uygulamadan ya da içeriğinden sorumlu değildir; uygulamaya ilişkin her türlü talep bize yöneltilmelidir.</p>
 <p>Abonelik ücreti Apple Kimliğinize yansıtılır ve abonelik, içinde bulunulan dönem sona ermeden en az 24 saat önce iptal edilmedikçe otomatik olarak yenilenir. Aboneliğinizi iOS Ayarlar → [adınız] → Abonelikler bölümünden yönetebilir veya iptal edebilirsiniz. Tüm ödemeler Apple tarafından tahsil edilir. İade talepleri Apple&#x27;ın kendi kurallarına tabidir ve doğrudan Apple&#x27;a yapılır (reportaproblem.apple.com); iade verme yetkimiz bulunmamaktadır.</p>
+</div>
+<div data-store="google">
 <h2>12. UYGULAMAYI GOOGLE PLAY&#x27;DEN EDİNDİYSENİZ</h2>
 <p>İndirme ve satın almalarınıza Google Play Hizmet Şartları uygulanır. Abonelik ücreti Google Play hesabınızdan tahsil edilir ve abonelik iptal edene kadar otomatik olarak yenilenir. Aboneliğinizi Google Play Store&#x27;da Ödemeler ve abonelikler → Abonelikler bölümünden yönetebilir veya iptal edebilirsiniz. Tüm ödemeler Google tarafından tahsil edilir. İade talepleri Google Play&#x27;in iade politikalarına tabidir ve Google Play üzerinden yapılır.</p>
+</div>
 </section>
 <section id="en">
 <p class="meta">Last updated: 18 October 2026 · Version 1.5</p>
@@ -99,13 +108,17 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>These terms are governed by the laws of the Republic of Türkiye. If you are acting as a consumer, the mandatory consumer protection rights of the country where you habitually reside are reserved, and nothing in this section prevents you from relying on them.</p>
 <h2>11. CONTACT</h2>
 <p>For questions about these terms: <a href="mailto:support@crosswordlane.com">support@crosswordlane.com</a></p>
+<div data-store="apple">
 <h2>12. IF YOU GOT THE APP FROM THE APP STORE</h2>
 <p>Apple&#x27;s Licensed Application End User License Agreement (Standard EULA) applies in addition to these terms:</p>
 <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
 <p>In case of conflict, Apple&#x27;s agreement prevails for purchases made through the App Store. Apple is not a party to these terms and is not responsible for the app or its content; any claim relating to the app must be directed to us.</p>
 <p>Subscriptions are charged to your Apple Account and renew automatically unless cancelled at least 24 hours before the end of the current period. You can manage or cancel a subscription under iOS Settings → [your name] → Subscriptions. All payments are collected by Apple. Refunds are governed by Apple&#x27;s own rules and are requested directly from Apple (reportaproblem.apple.com); we have no ability to issue refunds.</p>
+</div>
+<div data-store="google">
 <h2>12. IF YOU GOT THE APP FROM GOOGLE PLAY</h2>
 <p>The Google Play Terms of Service apply to your download and purchases. Subscriptions are charged to your Google Play account and renew automatically until you cancel them. You can manage or cancel a subscription in the Google Play Store under Payments &amp; subscriptions → Subscriptions. All payments are collected by Google. Refunds are governed by Google Play&#x27;s refund policies and are requested through Google Play.</p>
+</div>
 </section>
 <section id="es" hidden>
 <p class="meta">Última actualización: 18 de octubre de 2026 · Versión 1.5</p>
@@ -132,13 +145,17 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Estos términos se rigen por las leyes de la República de Türkiye. Si actúas como consumidor, quedan a salvo los derechos obligatorios de protección del consumidor del país en el que resides habitualmente, y nada de lo dispuesto en esta sección te impide invocarlos.</p>
 <h2>11. CONTACTO</h2>
 <p>Para cualquier pregunta sobre estos términos: <a href="mailto:support@crosswordlane.com">support@crosswordlane.com</a></p>
+<div data-store="apple">
 <h2>12. SI OBTUVISTE LA APP EN EL APP STORE</h2>
 <p>Además de los términos aquí recogidos, se aplica el Acuerdo de Licencia de Usuario Final de Aplicaciones con Licencia de Apple (EULA estándar):</p>
 <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
 <p>En caso de conflicto, el acuerdo de Apple prevalece para las compras realizadas a través del App Store. Apple no es parte de estos términos ni es responsable de la app ni de su contenido; cualquier reclamación relacionada con la app debe dirigirse a nosotros.</p>
 <p>Las suscripciones se cargan a tu Cuenta de Apple y se renuevan automáticamente, salvo que las canceles al menos 24 horas antes del final del periodo en curso. Puedes gestionar o cancelar una suscripción en Ajustes de iOS → [tu nombre] → Suscripciones. Apple cobra todos los pagos. Los reembolsos se rigen por las normas de Apple y se solicitan directamente a Apple (reportaproblem.apple.com); nosotros no podemos emitir reembolsos.</p>
+</div>
+<div data-store="google">
 <h2>12. SI OBTUVISTE LA APP EN GOOGLE PLAY</h2>
 <p>Las Condiciones de Servicio de Google Play se aplican a tu descarga y a tus compras. Las suscripciones se cargan a tu cuenta de Google Play y se renuevan automáticamente hasta que las canceles. Puedes gestionar o cancelar una suscripción en Google Play Store, en Pagos y suscripciones → Suscripciones. Google cobra todos los pagos. Los reembolsos se rigen por las políticas de reembolso de Google Play y se solicitan a través de Google Play.</p>
+</div>
 </section>
 <section id="fr" hidden>
 <p class="meta">Dernière mise à jour : 18 octobre 2026 · Version 1.5</p>
@@ -165,13 +182,17 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Les présentes conditions sont régies par les lois de la République de Türkiye. Si vous agissez en tant que consommateur, les droits impératifs de protection des consommateurs du pays où vous résidez habituellement sont réservés, et rien dans la présente section ne vous empêche de vous en prévaloir.</p>
 <h2>11. CONTACT</h2>
 <p>Pour toute question sur ces conditions : <a href="mailto:support@crosswordlane.com">support@crosswordlane.com</a></p>
+<div data-store="apple">
 <h2>12. SI VOUS AVEZ OBTENU L’APP SUR L’APP STORE</h2>
 <p>En plus des présentes conditions, le Contrat de licence de l’utilisateur final des applications sous licence d’Apple (CLUF standard) s’applique :</p>
 <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
 <p>En cas de conflit, le contrat d’Apple prévaut pour les achats effectués via l’App Store. Apple n’est pas partie aux présentes conditions et n’est pas responsable de l’app ni de son contenu ; toute réclamation relative à l’app doit nous être adressée.</p>
 <p>Les abonnements sont débités sur votre Compte Apple et se renouvellent automatiquement, sauf s’ils sont annulés au moins 24 heures avant la fin de la période en cours. Vous pouvez gérer ou annuler un abonnement dans Réglages d’iOS → [votre nom] → Abonnements. Tous les paiements sont encaissés par Apple. Les remboursements sont régis par les règles d’Apple et se demandent directement à Apple (reportaproblem.apple.com) ; nous n’avons pas la possibilité d’effectuer des remboursements.</p>
+</div>
+<div data-store="google">
 <h2>12. SI VOUS AVEZ OBTENU L’APP SUR GOOGLE PLAY</h2>
 <p>Les Conditions d’utilisation de Google Play s’appliquent à votre téléchargement et à vos achats. Les abonnements sont débités sur votre compte Google Play et se renouvellent automatiquement jusqu’à ce que vous les annuliez. Vous pouvez gérer ou annuler un abonnement dans le Google Play Store, sous Paiements et abonnements → Abonnements. Tous les paiements sont encaissés par Google. Les remboursements sont régis par les règles de remboursement de Google Play et se demandent via Google Play.</p>
+</div>
 </section>
 <section id="de" hidden>
 <p class="meta">Zuletzt aktualisiert: 18. Oktober 2026 · Version 1.5</p>
@@ -198,13 +219,17 @@ footer{margin-top:3.5rem;padding-top:1.25rem;border-top:1px solid var(--line);
 <p>Diese Bedingungen unterliegen dem Recht der Republik Türkiye. Wenn Sie als Verbraucher handeln, bleiben die zwingenden Verbraucherschutzrechte des Landes, in dem Sie Ihren gewöhnlichen Aufenthalt haben, vorbehalten, und nichts in diesem Abschnitt hindert Sie daran, sich darauf zu berufen.</p>
 <h2>11. KONTAKT</h2>
 <p>Bei Fragen zu diesen Bedingungen: <a href="mailto:support@crosswordlane.com">support@crosswordlane.com</a></p>
+<div data-store="apple">
 <h2>12. WENN SIE DIE APP ÜBER DEN APP STORE BEZOGEN HABEN</h2>
 <p>Zusätzlich zu den hier genannten Bedingungen gilt der Endbenutzer-Lizenzvertrag von Apple für lizenzierte Apps (Standard-EULA):</p>
 <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</a></p>
 <p>Im Fall eines Widerspruchs hat die Vereinbarung von Apple für Käufe über den App Store Vorrang. Apple ist nicht Partei dieser Bedingungen und nicht für die App oder ihre Inhalte verantwortlich; Ansprüche im Zusammenhang mit der App sind an uns zu richten.</p>
 <p>Abonnements werden über Ihren Apple Account abgerechnet und verlängern sich automatisch, sofern sie nicht mindestens 24 Stunden vor Ende des laufenden Zeitraums gekündigt werden. Sie können ein Abonnement unter iOS-Einstellungen → [Ihr Name] → Abonnements verwalten oder kündigen. Alle Zahlungen werden von Apple eingezogen. Erstattungen richten sich nach den Regeln von Apple und werden direkt bei Apple beantragt (reportaproblem.apple.com); wir haben keine Möglichkeit, Erstattungen vorzunehmen.</p>
+</div>
+<div data-store="google">
 <h2>12. WENN SIE DIE APP ÜBER GOOGLE PLAY BEZOGEN HABEN</h2>
 <p>Für Download und Käufe gelten die Nutzungsbedingungen von Google Play. Abonnements werden über Ihr Google Play-Konto abgerechnet und verlängern sich automatisch, bis Sie sie kündigen. Sie können ein Abonnement im Google Play Store unter Zahlungen und Abos → Abos verwalten oder kündigen. Alle Zahlungen werden von Google eingezogen. Erstattungen richten sich nach den Erstattungsrichtlinien von Google Play und werden über Google Play beantragt.</p>
+</div>
 </section>
 </main>
 <footer>Crossword Lane · <a href="./">crosswordlane.com</a></footer>
@@ -223,7 +248,18 @@ function pick(l){
 // The app's language (?lang=, sent by the in-app "open in browser") wins, then
 // a saved choice, then the browser's language; anything else gets English, as
 // in the app.
-var s=new URLSearchParams(location.search).get('lang');
+var q=new URLSearchParams(location.search);
+// The app shows its own store's section only, without the page's own chrome,
+// in its own colour scheme.
+var store=q.get('store');
+if(store==='apple'||store==='google'){
+  var parts=document.querySelectorAll('[data-store]');
+  for(var i=0;i<parts.length;i++) parts[i].hidden=parts[i].getAttribute('data-store')!==store;
+}
+if(q.get('embed')==='1') document.documentElement.classList.add('embed');
+var theme=q.get('theme');
+if(theme==='dark'||theme==='light') document.documentElement.setAttribute('data-theme',theme);
+var s=q.get('lang');
 if(!TITLES.hasOwnProperty(s)) { s=null; try{ s=localStorage.getItem('cwl-lang'); }catch(e){} }
 if(!TITLES.hasOwnProperty(s)) s=(navigator.language||'').slice(0,2).toLowerCase();
 if(!TITLES.hasOwnProperty(s)) s='en';
