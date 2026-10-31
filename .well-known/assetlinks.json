@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.crosswordlane.app",
+      "sha256_cert_fingerprints": ["2A:91:42:9E:A2:92:C4:DA:81:33:1C:F1:AE:74:22:69:FC:BA:25:AA:49:85:56:79:0A:43:F2:44:89:DD:C1:03"]
+    }
+  }
+]

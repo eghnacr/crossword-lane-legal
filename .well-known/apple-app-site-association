@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["CN85LGE7P6.com.crosswordlane.app"],
+        "components": [
+          { "/": "/m" },
+          { "/": "/m/*" }
+        ],
+        "appID": "CN85LGE7P6.com.crosswordlane.app",
+        "paths": ["/m", "/m/*"]
+      }
+    ]
+  }
+}
