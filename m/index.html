@@ -217,6 +217,9 @@ h1 {
 .store { background: rgba(8, 14, 45, 0.2); color: #fff; font-weight: 700; font-size: 16px; box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.55); }
 .badge { display: block; padding: 12px; } /* 12 px = a quarter of the badge's height, Apple's clear space */
 .badge img { display: block; height: 48px; width: auto; }
+.stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 12px; } /* side by side when they fit; 12px = a quarter of the height, both stores' clear space */
+.stores .badge { padding: 0; }
+@media (max-width: 380px) { .stores { gap: 11px; padding: 11px; } .stores .badge img { height: 44px; } }
 .soon { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.3; color: rgba(255, 255, 255, 0.72); text-align: center; } /* the home page's .android */
 .after {
   margin: 2px 0 0;
@@ -265,10 +268,14 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
 
     <div class="actions">
       <a class="btn primary" id="open" data-i18n="open" hidden>Open in the app</a>
-      <a class="badge" id="appstore" href="https://apps.apple.com/app/id6802071946">
-        <img id="badge" src="../img/app-store-badge-en.svg" width="144" height="48" alt="Download on the App Store">
-      </a>
-      <a class="btn store" id="play" href="https://play.google.com/store/apps/details?id=com.crosswordlane.app" data-i18n="play" hidden>Get it on Google Play</a>
+      <div class="stores">
+        <a class="badge" id="appstore" href="https://apps.apple.com/app/id6802071946">
+          <img id="badge" src="../img/app-store-badge-en.svg" width="144" height="48" alt="Download on the App Store">
+        </a>
+        <a class="badge" id="play" href="https://play.google.com/store/apps/details?id=com.crosswordlane.app" hidden>
+          <img id="playbadge" src="../img/google-play-badge-en.png" width="161" height="48" alt="Get it on Google Play">
+        </a>
+      </div>
       <p class="soon" id="soon" data-i18n="soon" hidden>Android version coming soon</p>
     </div>
     <p class="after" id="after" data-i18n="after" hidden>Install the app, then go back to the chat and tap the invite link again. Or open the Online tab in the app, tap Enter code and type this code.</p>
@@ -292,12 +299,11 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     var LANGS = ['tr', 'en', 'es', 'de', 'fr', 'it', 'sv', 'pl', 'nl', 'pt'];
     var APP_PACKAGE = 'com.crosswordlane.app';
     var PLAY_URL = 'https://play.google.com/store/apps/details?id=' + APP_PACKAGE;
-    // False until the app is out on Google Play. Its listing is not public
-    // yet, so the page says what the home page says ("Android version coming
-    // soon") where the Play button would be, Android gets no install line,
-    // and "open in the app" falls back to this page. True on the day Android
-    // is public.
-    var ANDROID_PUBLIC = false;
+    // True since 2026-11-07: the app is live on Google Play. (While it was
+    // false the page said "Android version coming soon" where the Play badge
+    // is, Android got no install line, and "open in the app" fell back to
+    // this page instead of the Play listing.)
+    var ANDROID_PUBLIC = true;
 
     // MpContract.joinCodePattern (packages/crossword_online, net/mp_contract.dart):
     // a 5-character invite code, or a GameKit party code.
@@ -392,7 +398,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       copied: 'Kopyalandı',
       after: 'Uygulamayı yükle, sonra sohbete dönüp davet linkine tekrar dokun. Ya da uygulamada Çevrimiçi sekmesinde Kod gir’e dokunup bu kodu yaz.',
       open: 'Uygulamada aç',
-      play: 'Google Play’den indir',
+      play: 'Google Play’den İndirin',
       soon: 'Android sürümü yakında',
       noCode: 'Bu linkte davet kodu yok. Kodu arkadaşından iste.',
       badge: 'App Store’dan İndirin',
@@ -424,7 +430,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       copied: 'Copiado',
       after: 'Instala la app, vuelve al chat y toca otra vez el enlace de invitación. O abre la pestaña En línea en la app, toca Introducir código y escribe este código.',
       open: 'Abrir en la app',
-      play: 'Consíguelo en Google Play',
+      play: 'Disponible en Google Play',
       soon: 'Versión para Android muy pronto',
       noCode: 'Este enlace no tiene código de invitación. Pídeselo a quien te lo envió.',
       badge: 'Consíguelo en el App Store',
@@ -440,7 +446,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       copied: 'Kopiert',
       after: 'Installiere die App, geh dann zurück in den Chat und tippe noch einmal auf den Einladungslink. Oder tippe in der App im Online-Tab auf „Code eingeben“ und gib diesen Code ein.',
       open: 'In der App öffnen',
-      play: 'Bei Google Play laden',
+      play: 'Jetzt bei Google Play',
       soon: 'Android-Version kommt bald',
       noCode: 'In diesem Link fehlt der Einladungscode. Frag die Person, die ihn dir geschickt hat.',
       badge: 'Laden im App Store',
@@ -456,7 +462,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       copied: 'Copié',
       after: 'Installe l’appli, puis reviens dans la discussion et touche à nouveau le lien d’invitation. Ou ouvre l’onglet En ligne dans l’appli, touche Saisir un code et tape ce code.',
       open: 'Ouvrir dans l’appli',
-      play: 'Télécharger sur Google Play',
+      play: 'Disponible sur Google Play',
       soon: 'Version Android bientôt disponible',
       noCode: 'Ce lien ne contient pas de code d’invitation. Demande-le à la personne qui te l’a envoyé.',
       badge: 'Télécharger dans l’App Store',
@@ -564,9 +570,12 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     badge.alt = TEXT.en.badge;
   });
   // Languages without Apple's badge in img/ show the English one, alt included.
-  var own = ['tr', 'en', 'es', 'de', 'fr'].indexOf(p.lang) >= 0;
+  var own = ['tr', 'en', 'es', 'de', 'fr', 'it', 'sv', 'pl', 'nl', 'pt'].indexOf(p.lang) >= 0;
   badge.setAttribute('src', '../img/app-store-badge-' + (own ? p.lang : 'en') + '.svg');
   badge.alt = own ? t.badge : TEXT.en.badge;
+  // Google's own Play badge in the page's language (all ten exist).
+  $('playbadge').setAttribute('src', '../img/google-play-badge-' + p.lang + '.png');
+  $('playbadge').alt = t.play;
 
   $('appstore').hidden = !p.appStore;
   $('play').hidden = !p.play;

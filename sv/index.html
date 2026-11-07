@@ -44,7 +44,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 [{"@context":"https://schema.org","@type":"WebSite","name":"Crossword Lane","url":"https://crosswordlane.com/"},
-{"@context":"https://schema.org","@type":"MobileApplication","name":"Crossword Lane","description":"A crossword game with picture clues. Drag your letters onto the board and play turn by turn against the computer. A new puzzle every day.","operatingSystem":"iOS","applicationCategory":"GameApplication","applicationSubCategory":"Word","inLanguage":["en","tr","es","fr","de","it","sv","pl","nl","pt"],"url":"https://crosswordlane.com/","downloadUrl":"https://apps.apple.com/app/id6802071946","image":"https://crosswordlane.com/img/og.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Egehan Acar"}}]
+{"@context":"https://schema.org","@type":"MobileApplication","name":"Crossword Lane","description":"A crossword game with picture clues. Drag your letters onto the board and play turn by turn against the computer. A new puzzle every day.","operatingSystem":"iOS, Android","applicationCategory":"GameApplication","applicationSubCategory":"Word","inLanguage":["en","tr","es","fr","de","it","sv","pl","nl","pt"],"url":"https://crosswordlane.com/","downloadUrl":["https://apps.apple.com/app/id6802071946","https://play.google.com/store/apps/details?id=com.crosswordlane.app"],"image":"https://crosswordlane.com/img/og.jpg","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"Egehan Acar"}}]
 </script>
 <style>
 /* Nunito, the app's own face (SIL OFL 1.1), subset to Latin + Turkish and inlined so the logo never flashes a fallback. */
@@ -386,6 +386,16 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 }
 .badge { display: block; padding: 12px; } /* 12 px = a quarter of the badge's height, Apple's clear space */
 .badge img { display: block; height: 48px; width: auto; }
+
+/* The two store badges side by side, each with a quarter of its height as
+   clear space (Apple's and Google's rule: the 12px gap and padding), both 48px high; they stack when
+   the screen is too narrow for both, and shrink a little on the smallest. */
+.stores { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 12px; }
+.stores .badge { padding: 0; }
+@media (max-width: 380px) {
+  .stores { gap: 11px; padding: 11px; }
+  .stores .badge img { height: 44px; }
+}
 .android { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.3; color: rgba(255, 255, 255, 0.72); text-align: center; }
 
 footer {
@@ -477,10 +487,14 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     <p class="tagline" id="tagline" data-i18n="tagline">Ett nytt korsord varje dag</p>
 
     <div class="cta">
-      <a class="badge" href="https://apps.apple.com/app/id6802071946">
-        <img id="badge" src="img/app-store-badge-en.svg" width="144" height="48" alt="Download on the App Store">
-      </a>
-      <p class="android" data-i18n="android">Android-versionen kommer snart</p>
+      <div class="stores">
+        <a class="badge" href="https://apps.apple.com/app/id6802071946">
+          <img id="badge" src="img/app-store-badge-sv.svg" width="144" height="48" alt="Hämta i App Store">
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.crosswordlane.app">
+          <img id="playbadge" src="img/google-play-badge-sv.png" width="162" height="48" alt="Ladda ned på Google Play">
+        </a>
+      </div>
     </div>
   </div>
 
@@ -491,7 +505,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       <a href="terms.html" data-i18n="terms">Användarvillkor</a>
       <a href="mailto:support@crosswordlane.com"><span data-i18n="support">Kundtjänst</span>: support@crosswordlane.com</a>
     </nav>
-    <p class="legal">© 2026 Egehan Acar. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc., registered in the U.S. and other countries.</p>
+    <p class="legal">© 2026 Egehan Acar. Apple and the Apple logo are trademarks of Apple Inc., registered in the U.S. and other countries. App Store is a service mark of Apple Inc., registered in the U.S. and other countries. Google Play and the Google Play logo are trademarks of Google LLC.</p>
   </footer>
 </main>
 
@@ -523,7 +537,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
   var TEXT = {
     en: {
       tagline: 'A new puzzle every day',
-      android: 'Android version coming soon',
       privacy: 'Privacy Policy',
       terms: 'Terms of Use',
       support: 'Support',
@@ -531,6 +544,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Drag me',
       nice: 'Nice! The rest is in the game.',
       badge: 'Download on the App Store',
+      play: 'Get it on Google Play',
       about: 'Crossword Lane is a crossword game with picture clues for iPhone. Drag letters onto the board and play turn by turn against the computer.',
       title: 'Crossword Lane: Crossword Puzzles with Picture Clues',
       og: 'A crossword game with picture clues. A new puzzle every day.',
@@ -538,7 +552,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     tr: {
       tagline: 'Her gün yeni bir bulmaca',
-      android: 'Android sürümü yakında',
       privacy: 'Gizlilik Politikası',
       terms: 'Kullanım Şartları',
       support: 'Destek',
@@ -546,6 +559,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Beni sürükle',
       nice: 'Güzel! Gerisi oyunda.',
       badge: 'App Store’dan İndirin',
+      play: 'Google Play’den İndirin',
       about: 'Crossword Lane, iPhone için resimli ipuçlarıyla oynanan bir çengel bulmaca oyunu. Harfleri tahtaya sürükle, bilgisayara karşı sırayla oyna.',
       title: 'Crossword Lane: Resimli Çengel Bulmaca',
       og: 'Resimli ipuçlarıyla oynanan bir çengel bulmaca. Her gün yeni bir bulmaca.',
@@ -553,7 +567,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     es: {
       tagline: 'Un crucigrama nuevo cada día',
-      android: 'Versión para Android muy pronto',
       privacy: 'Política de privacidad',
       terms: 'Términos de uso',
       support: 'Soporte',
@@ -561,6 +574,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Arrástrame',
       nice: '¡Muy bien! Lo demás, en el juego.',
       badge: 'Consíguelo en el App Store',
+      play: 'Disponible en Google Play',
       about: 'Crossword Lane es un juego de crucigramas con pistas de imágenes para iPhone. Arrastra las letras al tablero y juega por turnos contra la máquina.',
       title: 'Crossword Lane: Crucigramas con imágenes',
       og: 'Un juego de crucigramas con pistas de imágenes. Un crucigrama nuevo cada día.',
@@ -568,7 +582,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     fr: {
       tagline: 'Une nouvelle grille chaque jour',
-      android: 'Version Android bientôt disponible',
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d’utilisation',
       support: 'Assistance',
@@ -576,6 +589,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Fais-moi glisser',
       nice: 'Bravo\u00a0! La suite, dans le jeu.',
       badge: 'Télécharger dans l’App Store',
+      play: 'Disponible sur Google Play',
       about: 'Crossword Lane est un jeu de mots fléchés avec des images pour iPhone. Fais glisser les lettres sur la grille et joue tour à tour contre l’ordinateur.',
       title: 'Crossword Lane\u00a0: mots fléchés en images',
       og: 'Un jeu de mots fléchés avec des images. Une nouvelle grille chaque jour.',
@@ -583,7 +597,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     de: {
       tagline: 'Jeden Tag ein neues Rätsel',
-      android: 'Android-Version kommt bald',
       privacy: 'Datenschutzerklärung',
       terms: 'Nutzungsbedingungen',
       support: 'Support',
@@ -591,6 +604,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Zieh mich',
       nice: 'Super! Weiter geht’s im Spiel.',
       badge: 'Laden im App Store',
+      play: 'Jetzt bei Google Play',
       about: 'Crossword Lane ist ein Schwedenrätsel mit Bildern für das iPhone. Zieh Buchstaben auf das Spielfeld und spiel abwechselnd gegen den Computer.',
       title: 'Crossword Lane: Schwedenrätsel mit Bildern',
       og: 'Ein Schwedenrätsel mit Bildern. Jeden Tag ein neues Rätsel.',
@@ -598,7 +612,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     it: {
       tagline: 'Un cruciverba nuovo ogni giorno',
-      android: 'Versione Android in arrivo',
       privacy: 'Informativa sulla privacy',
       terms: 'Termini di utilizzo',
       support: 'Assistenza',
@@ -606,6 +619,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Trascinami',
       nice: 'Ottimo! Il resto è nel gioco.',
       badge: 'Scarica su App Store',
+      play: 'Disponibile su Google Play',
       about: 'Crossword Lane è un gioco di cruciverba con definizioni illustrate per iPhone. Trascina le lettere sulla griglia e gioca a turni contro il computer.',
       title: 'Crossword Lane: cruciverba con immagini',
       og: 'Un cruciverba con definizioni illustrate. Uno nuovo ogni giorno.',
@@ -613,7 +627,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     sv: {
       tagline: 'Ett nytt korsord varje dag',
-      android: 'Android-versionen kommer snart',
       privacy: 'Integritetspolicy',
       terms: 'Användarvillkor',
       support: 'Kundtjänst',
@@ -621,6 +634,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Dra mig',
       nice: 'Snyggt! Resten finns i spelet.',
       badge: 'Hämta i App Store',
+      play: 'Ladda ned på Google Play',
       about: 'Crossword Lane är ett korsord med bilder som ledtrådar för iPhone. Dra bokstäverna till spelplanen och spela turvis mot datorn.',
       title: 'Crossword Lane: korsord med bilder',
       og: 'Ett korsord med bilder som ledtrådar. Ett nytt korsord varje dag.',
@@ -628,7 +642,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     pl: {
       tagline: 'Codziennie nowa krzyżówka',
-      android: 'Wersja na Androida już wkrótce',
       privacy: 'Polityka prywatności',
       terms: 'Regulamin',
       support: 'Pomoc',
@@ -636,6 +649,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Przeciągnij mnie',
       nice: 'Świetnie! Resztę znajdziesz w grze.',
       badge: 'Pobierz w App Store',
+      play: 'Pobierz z Google Play',
       about: 'Crossword Lane to krzyżówka z obrazkami zamiast definicji na iPhone’a. Przeciągaj litery na planszę i graj na zmianę z komputerem.',
       title: 'Crossword Lane: krzyżówki z obrazkami',
       og: 'Krzyżówka z obrazkami zamiast definicji. Codziennie nowa.',
@@ -643,7 +657,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     nl: {
       tagline: 'Elke dag een nieuwe puzzel',
-      android: 'Android-versie komt binnenkort',
       privacy: 'Privacybeleid',
       terms: 'Gebruiksvoorwaarden',
       support: 'Hulp',
@@ -651,6 +664,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Sleep mij',
       nice: 'Top! De rest vind je in het spel.',
       badge: 'Download in de App Store',
+      play: 'Ontdek het op Google Play',
       about: 'Crossword Lane is een kruiswoordpuzzelspel met afbeeldingen voor iPhone. Sleep letters naar het speelbord en speel om de beurt tegen de computer.',
       title: 'Crossword Lane: kruiswoordpuzzels met afbeeldingen',
       og: 'Een kruiswoordpuzzel met afbeeldingen. Elke dag een nieuwe puzzel.',
@@ -658,7 +672,6 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     },
     pt: {
       tagline: 'Novas palavras cruzadas todos os dias',
-      android: 'Versão para Android em breve',
       privacy: 'Política de privacidade',
       terms: 'Termos de uso',
       support: 'Suporte',
@@ -666,6 +679,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       hint: 'Arraste',
       nice: 'Boa! O resto está no jogo.',
       badge: 'Baixar na App Store',
+      play: 'Disponível no Google Play',
       about: 'Crossword Lane é um jogo de palavras cruzadas com imagens para iPhone. Arraste as letras para o tabuleiro e jogue em turnos contra o computador.',
       title: 'Crossword Lane: palavras cruzadas com imagens',
       og: 'Palavras cruzadas com imagens. Um nível novo todos os dias.',
@@ -675,7 +689,8 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
   var lang = 'en';
   var picker = $('langpick');
   var LANG_WORD = {"tr": "Dil", "en": "Language", "es": "Idioma", "fr": "Langue", "de": "Sprache", "it": "Lingua", "sv": "Språk", "pl": "Język", "nl": "Taal", "pt": "Idioma"};
-  var BADGES = ["tr", "en", "es", "fr", "de"];
+  var BADGES = ["tr", "en", "es", "fr", "de", "it", "sv", "pl", "nl", "pt"];
+  var playBadge = $('playbadge');
   var bubbleKey = null;
 
   function initialLang() {
@@ -704,6 +719,9 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     var art = 'img/app-store-badge-' + (own ? l : 'en') + '.svg';
     if (badge.getAttribute('src') !== art) badge.setAttribute('src', art);
     badge.alt = own ? t.badge : TEXT.en.badge;
+    var gp = 'img/google-play-badge-' + l + '.png';
+    if (playBadge.getAttribute('src') !== gp) playBadge.setAttribute('src', gp);
+    playBadge.alt = t.play;
     document.title = t.title;
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', t.description);
