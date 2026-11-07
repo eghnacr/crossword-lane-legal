@@ -289,7 +289,7 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
 
   /* ---- pure logic: begin. The page’s reading of the link and the phone, no DOM. ---- */
   var Invite = (function () {
-    var LANGS = ['tr', 'en', 'es', 'de', 'fr'];
+    var LANGS = ['tr', 'en', 'es', 'de', 'fr', 'it', 'sv', 'pl', 'nl', 'pt'];
     var APP_PACKAGE = 'com.crosswordlane.app';
     var PLAY_URL = 'https://play.google.com/store/apps/details?id=' + APP_PACKAGE;
     // False until the app is out on Google Play. Its listing is not public
@@ -378,8 +378,8 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
   })();
   /* ---- pure logic: end ---- */
 
-  // Turkish and English are the brief's. Spanish, German and French say the
-  // same, with a lead that names no one, so it needs no gender. Online /
+  // Turkish and English are the brief's. Spanish, German, French, Italian,
+  // Swedish, Polish, Dutch and Portuguese say the same, with a lead that names no one, so it needs no gender. Online /
   // Enter code are the app's own labels (mpTabOnline, mpEnterCode in
   // lib/l10n/app_*.arb); "soon" is the home page's Android line, word for word.
   var TEXT = {
@@ -462,6 +462,86 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
       badge: 'Télécharger dans l’App Store',
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d’utilisation'
+    },
+    it: {
+      title: 'Invito a Crossword Lane',
+      heading: 'Hai un invito a una partita',
+      lead: 'Ti aspetta una partita a Crossword Lane.',
+      codeLabel: 'Codice invito',
+      copy: 'Copia codice',
+      copied: 'Copiato',
+      after: 'Installa l’app, poi torna nella chat e tocca di nuovo il link dell’invito. Oppure apri la scheda Online nell’app, tocca Inserisci codice e digita questo codice.',
+      open: 'Apri nell’app',
+      play: 'Disponibile su Google Play',
+      soon: 'Versione Android in arrivo',
+      noCode: 'Questo link non contiene un codice invito. Chiedilo a chi te l’ha mandato.',
+      badge: 'Scarica su App Store',
+      privacy: 'Informativa sulla privacy',
+      terms: 'Termini di utilizzo'
+    },
+    sv: {
+      title: 'Inbjudan till Crossword Lane',
+      heading: 'Du är inbjuden till en match',
+      lead: 'En match i Crossword Lane väntar på dig.',
+      codeLabel: 'Inbjudningskod',
+      copy: 'Kopiera kod',
+      copied: 'Kopierat',
+      after: 'Installera appen, gå sedan tillbaka till chatten och tryck på inbjudningslänken igen. Eller öppna fliken Online i appen, tryck på Ange kod och skriv in den här koden.',
+      open: 'Öppna i appen',
+      play: 'Ladda ned på Google Play',
+      soon: 'Android-versionen kommer snart',
+      noCode: 'Länken har ingen inbjudningskod. Be den som skickade länken om koden.',
+      badge: 'Hämta i App Store',
+      privacy: 'Integritetspolicy',
+      terms: 'Användarvillkor'
+    },
+    pl: {
+      title: 'Zaproszenie do Crossword Lane',
+      heading: 'Zaproszenie do gry',
+      lead: 'Czeka na ciebie gra w Crossword Lane.',
+      codeLabel: 'Kod zaproszenia',
+      copy: 'Kopiuj kod',
+      copied: 'Skopiowano',
+      after: 'Zainstaluj aplikację, wróć do czatu i jeszcze raz dotknij linku z zaproszeniem. Możesz też otworzyć w aplikacji kartę Online, dotknąć Wpisz kod i wpisać ten kod.',
+      open: 'Otwórz w aplikacji',
+      play: 'Pobierz z Google Play',
+      soon: 'Wersja na Androida już wkrótce',
+      noCode: 'Ten link nie zawiera kodu zaproszenia. Poproś o kod osobę, która wysłała link.',
+      badge: 'Pobierz w App Store',
+      privacy: 'Polityka prywatności',
+      terms: 'Regulamin'
+    },
+    nl: {
+      title: 'Uitnodiging voor Crossword Lane',
+      heading: 'Je bent uitgenodigd voor een spel',
+      lead: 'Er wacht een spel Crossword Lane op je.',
+      codeLabel: 'Uitnodigingscode',
+      copy: 'Code kopiëren',
+      copied: 'Gekopieerd',
+      after: 'Installeer de app, ga terug naar de chat en tik nog een keer op de uitnodigingslink. Of open in de app het tabblad Online, tik op Code invoeren en typ deze code.',
+      open: 'Openen in de app',
+      play: 'Ontdek het op Google Play',
+      soon: 'Android-versie komt binnenkort',
+      noCode: 'Deze link bevat geen uitnodigingscode. Vraag de code aan wie je de link heeft gestuurd.',
+      badge: 'Download in de App Store',
+      privacy: 'Privacybeleid',
+      terms: 'Gebruiksvoorwaarden'
+    },
+    pt: {
+      title: 'Convite para o Crossword Lane',
+      heading: 'Convite para uma partida',
+      lead: 'Uma partida de Crossword Lane está à sua espera.',
+      codeLabel: 'Código de convite',
+      copy: 'Copiar código',
+      copied: 'Copiado',
+      after: 'Instale o app, volte para a conversa e toque de novo no link do convite. Ou abra a aba Online no app, toque em Inserir código e digite este código.',
+      open: 'Abrir no app',
+      play: 'Disponível no Google Play',
+      soon: 'Versão para Android em breve',
+      noCode: 'Este link não tem código de convite. Peça o código a quem enviou o link.',
+      badge: 'Baixar na App Store',
+      privacy: 'Política de privacidade',
+      terms: 'Termos de uso'
     }
   };
 
@@ -483,8 +563,10 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     badge.setAttribute('src', '../img/app-store-badge-en.svg');
     badge.alt = TEXT.en.badge;
   });
-  badge.setAttribute('src', '../img/app-store-badge-' + p.lang + '.svg');
-  badge.alt = t.badge;
+  // Languages without Apple's badge in img/ show the English one, alt included.
+  var own = ['tr', 'en', 'es', 'de', 'fr'].indexOf(p.lang) >= 0;
+  badge.setAttribute('src', '../img/app-store-badge-' + (own ? p.lang : 'en') + '.svg');
+  badge.alt = own ? t.badge : TEXT.en.badge;
 
   $('appstore').hidden = !p.appStore;
   $('play').hidden = !p.play;
