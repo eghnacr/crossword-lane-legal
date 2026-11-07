@@ -76,8 +76,8 @@ body {
 }
 [hidden] { display: none !important; }
 a { color: inherit; }
-a:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 8px; }
-.lang button:focus-visible { border-radius: 999px; }
+a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid #fff; outline-offset: 3px; border-radius: 8px; }
+.lang select:focus-visible { border-radius: 999px; }
 .tile:focus-visible { border-radius: calc(26 * var(--u)); outline-offset: 5px; }
 
 /* The field: the splash's 165° indigo with the glow that lifts its top edge. */
@@ -101,28 +101,48 @@ a:focus-visible, button:focus-visible { outline: 3px solid #fff; outline-offset:
   top: calc(14px + env(safe-area-inset-top, 0px));
   right: max(16px, env(safe-area-inset-right, 0px));
 }
+/* The language picker: a native <select> in the splash's glass pill. 16px so
+   iOS Safari does not zoom in when it opens; the open list is the system's,
+   so its options are given dark text on white. */
 .lang {
+  position: relative;
   display: flex;
-  padding: 3px;
+  align-items: center;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+  color: #fff;
 }
-.lang button {
+.lang svg { position: absolute; left: 12px; width: 16px; height: 16px; opacity: 0.85; pointer-events: none; }
+.lang::after {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+  opacity: 0.85;
+  pointer-events: none;
+}
+.lang select {
+  -webkit-appearance: none;
   appearance: none;
   border: 0;
   margin: 0;
-  min-width: 44px;
-  min-height: 32px;
-  padding: 0 12px;
+  min-height: 40px;
+  padding: 0 36px 0 36px;
   border-radius: 999px;
   background: transparent;
-  color: rgba(255, 255, 255, 0.82);
-  font: 700 13px/1 var(--font);
-  letter-spacing: 0.06em;
+  color: #fff;
+  font: 700 16px/1.2 var(--font);
   cursor: pointer;
 }
-.lang button[aria-pressed="true"] { background: #fff; color: var(--indigo-lo); }
+.lang select:hover { background: rgba(255, 255, 255, 0.08); }
+.lang option { color: #1b1b1f; background: #fff; }
+.vh { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .center {
   flex: 1;
@@ -401,13 +421,17 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
 <body>
 <main class="field" id="field">
   <div class="topbar">
-    <div class="lang" role="group" aria-label="Language">
-      <button type="button" data-lang="tr" aria-pressed="false" lang="tr">TR</button>
-      <button type="button" data-lang="es" aria-pressed="false" lang="es">ES</button>
-      <button type="button" data-lang="fr" aria-pressed="true" lang="fr">FR</button>
-      <button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button>
-      <button type="button" data-lang="en" aria-pressed="false" lang="en">EN</button>
-    </div>
+    <label class="lang">
+      <span class="vh" id="langword">Langue</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
+      <select id="langpick">
+        <option value="tr" lang="tr">Türkçe</option>
+        <option value="en" lang="en">English</option>
+        <option value="es" lang="es">Español</option>
+        <option value="fr" lang="fr" selected>Français</option>
+        <option value="de" lang="de">Deutsch</option>
+      </select>
+    </label>
   </div>
 
   <div class="center">
@@ -559,6 +583,9 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     }
   };
   var lang = 'en';
+  var picker = $('langpick');
+  var LANG_WORD = {"tr": "Dil", "en": "Language", "es": "Idioma", "fr": "Langue", "de": "Sprache"};
+  var BADGES = ["tr", "en", "es", "fr", "de"];
   var bubbleKey = null;
 
   function initialLang() {
@@ -582,15 +609,16 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     document.querySelectorAll('[data-i18n]').forEach(function (el) { el.textContent = t[el.getAttribute('data-i18n')]; });
     tile.setAttribute('aria-label', t.tile);
     // Apple's own badge in the page's language; "App Store" is never translated by us.
-    var art = 'img/app-store-badge-' + l + '.svg';
+    // Languages without Apple's badge in img/ show the English one, alt included.
+    var own = BADGES.indexOf(l) >= 0;
+    var art = 'img/app-store-badge-' + (own ? l : 'en') + '.svg';
     if (badge.getAttribute('src') !== art) badge.setAttribute('src', art);
-    badge.alt = t.badge;
+    badge.alt = own ? t.badge : TEXT.en.badge;
     document.title = t.title;
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute('content', t.description);
-    document.querySelectorAll('.lang button').forEach(function (b) {
-      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false');
-    });
+    picker.value = l;
+    $('langword').textContent = LANG_WORD[l];
     if (bubbleKey) { bubble.textContent = t[bubbleKey]; fitBubble(); }
   }
 
@@ -600,12 +628,19 @@ footer nav a:hover { color: #fff; text-decoration: underline; text-underline-off
     badge.alt = TEXT.en.badge;
   });
 
-  document.querySelectorAll('.lang button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var l = b.getAttribute('data-lang');
-      setLang(l);
-      try { localStorage.setItem('cl-lang', l); } catch (e) {}
-    });
+  // A choice in the picker: show it, save it, and write it into the address
+  // (?lang= wins over the page's own language), so a reload or a shared link
+  // keeps it.
+  picker.addEventListener('change', function () {
+    var l = picker.value;
+    if (!TEXT.hasOwnProperty(l)) return;
+    setLang(l);
+    try { localStorage.setItem('cl-lang', l); } catch (e) {}
+    try {
+      var u = new URL(location.href);
+      u.searchParams.set('lang', l);
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    } catch (e) {}
   });
   setLang(initialLang());
 
